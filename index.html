@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tests de Grado · Karate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F0D080;
+    --gold-dim: #7A5F25;
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface2: #1A1A1A;
+    --text: #F0EDE8;
+    --muted: #888880;
+    --border: rgba(201,168,76,0.2);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  .kanji {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 3rem;
+    color: var(--gold-dim);
+    letter-spacing: 0.3em;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 4rem);
+    letter-spacing: 0.12em;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem auto;
+    opacity: 0.5;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .card:hover, .card:focus-visible {
+    background: var(--surface2);
+    border-color: rgba(201,168,76,0.5);
+    transform: translateY(-2px);
+    outline: none;
+  }
+
+  .card:active {
+    transform: translateY(0);
+  }
+
+  .belt-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .belt-icon::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 8px;
+    background: #111;
+    border-radius: 2px;
+  }
+
+  .belt-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .belt-cn::before { background: #1a1a1a; border: 1px solid #333; }
+  .belt-dan1::after { background: var(--gold); width: 6px; height: 6px; }
+  .belt-dan2::after { background: var(--gold); width: 6px; height: 6px; box-shadow: 10px 0 0 var(--gold), -10px 0 0 var(--gold); }
+  .belt-dan3::after { background: var(--gold); width: 6px; height: 6px; box-shadow: 10px 0 0 var(--gold), -10px 0 0 var(--gold); }
+  .belt-dan3 .belt-star { display: flex !important; }
+
+  .belt-visual {
+    width: 28px;
+    height: 8px;
+    background: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dan-dots {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 2px;
+    z-index: 2;
+  }
+
+  .dan-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .card-text {
+    flex: 1;
+  }
+
+  .card-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.2rem;
+  }
+
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    line-height: 1;
+  }
+
+  .card-arrow {
+    color: var(--gold-dim);
+    font-size: 1.2rem;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .card:hover .card-arrow {
+    transform: translateX(4px);
+    color: var(--gold);
+  }
+
+  footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #F5F2EC;
+      --surface: #FFFFFF;
+      --surface2: #F0EDE8;
+      --text: #0A0A0A;
+      --muted: #888;
+      --border: rgba(150,110,30,0.2);
+    }
+    .belt-visual { background: #111; border-color: #333; }
+    .belt-cn::before { background: #111; border-color: #333; }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="content">
+  <header>
+    <div class="kanji">空手道</div>
+    <h1>Tests de Grado</h1>
+    <p class="subtitle">Selecciona tu nivel</p>
+    <div class="divider"></div>
+  </header>
+
+  <div class="cards">
+
+    <a class="card" href="ENLACE_CN_NEGRO" target="_blank" rel="noopener">
+      <div class="belt-icon belt-cn">
+        <div class="belt-visual"></div>
+      </div>
+      <div class="card-text">
+        <div class="card-label">Cinturón Negro</div>
+        <div class="card-title">CN Negro</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="ENLACE_1_DAN" target="_blank" rel="noopener">
+      <div class="belt-icon belt-dan1">
+        <div class="belt-visual"></div>
+        <div class="dan-dots"><div class="dan-dot"></div></div>
+      </div>
+      <div class="card-text">
+        <div class="card-label">Primer Grado</div>
+        <div class="card-title">CN Negro 1.º DAN</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="ENLACE_2_DAN" target="_blank" rel="noopener">
+      <div class="belt-icon belt-dan2">
+        <div class="belt-visual"></div>
+        <div class="dan-dots">
+          <div class="dan-dot"></div>
+          <div class="dan-dot"></div>
+        </div>
+      </div>
+      <div class="card-text">
+        <div class="card-label">Segundo Grado</div>
+        <div class="card-title">CN Negro 2.º DAN</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+    <a class="card" href="ENLACE_3_DAN" target="_blank" rel="noopener">
+      <div class="belt-icon belt-dan3">
+        <div class="belt-visual"></div>
+        <div class="dan-dots">
+          <div class="dan-dot"></div>
+          <div class="dan-dot"></div>
+          <div class="dan-dot"></div>
+        </div>
+      </div>
+      <div class="card-text">
+        <div class="card-label">Tercer Grado</div>
+        <div class="card-title">CN Negro 3.º DAN</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>Repite hasta dominar el temario · OSU</p>
+  </footer>
+</div>
+</body>
+</html>
