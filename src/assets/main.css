@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0A0A0A;
+  --surface: #111111;
+  --surface2: #1A1A1A;
+  --app-text: #F0EDE8;
+  --muted: #A0A099;
+  --border-color: rgba(201, 168, 76, 0.2);
+  --border-hover: rgba(201, 168, 76, 0.5);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #F5F2EC;
+    --surface: #FFFFFF;
+    --surface2: #F0EDE8;
+    --app-text: #0A0A0A;
+    --muted: #575754;
+    --border-color: rgba(150, 110, 30, 0.2);
+    --border-hover: rgba(150, 110, 30, 0.4);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--app-text);
+  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 100vh;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Noise texture — not expressible as a Tailwind utility */
+.noise {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@layer utilities {
+  .border-theme {
+    border-color: var(--border-color);
+  }
+}
