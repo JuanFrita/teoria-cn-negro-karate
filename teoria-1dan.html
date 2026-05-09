@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teoría · CN Negro 1.º DAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F0D080;
+    --gold-dim: #7A5F25;
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface2: #1A1A1A;
+    --text: #F0EDE8;
+    --muted: #888880;
+    --border: rgba(201,168,76,0.2);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    padding: 2rem 1rem 5rem;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--gold); }
+
+  header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .grade-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 3.5rem);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .note-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .topics {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .topic {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+
+  .topic:last-child { border-bottom: none; }
+
+  .topic-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .topic-question {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .topic-answer {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .term-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .term-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .term-jp {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  .term-es {
+    font-size: 0.825rem;
+    color: var(--muted);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #F5F2EC;
+      --surface: #FFFFFF;
+      --surface2: #F0EDE8;
+      --text: #0A0A0A;
+      --muted: #666;
+      --border: rgba(150,110,30,0.15);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="content">
+
+  <a class="back-link" href="index.html#teoria">← Volver</a>
+
+  <header>
+    <div class="grade-tag">Teoría · Primer Grado</div>
+    <h1>CN Negro 1.º DAN</h1>
+    <p class="header-meta">12 temas · Incluye temario CN Negro · Normativa RFEK 2025 v1.1</p>
+  </header>
+
+  <div class="note-box">
+    El aspirante deberá conocer el temario del grado anterior (CN Negro).
+  </div>
+
+  <div class="topics">
+
+    <div class="topic">
+      <div class="topic-num">01</div>
+      <div class="topic-question">Características técnicas del estilo que practica</div>
+      <div class="topic-answer">El aspirante deberá conocer las características técnicas específicas del estilo que practica.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">02</div>
+      <div class="topic-question">Puntos importantes en las técnicas de brazo</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">TSUKITE</span>
+            <span class="term-es">El que ejecuta la acción</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">HIKITE</span>
+            <span class="term-es">El que recoge hacia atrás</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KOSHI KAITEN</span>
+            <span class="term-es">La acción de la cadera</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">03</div>
+      <div class="topic-question">Puntos importantes en las técnicas de pierna</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">KAKAE KOMI ASHI</span>
+            <span class="term-es">Elevación de rodilla</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KERI HANASHI</span>
+            <span class="term-es">Extensión de la pierna</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">JIKU ASHI</span>
+            <span class="term-es">Base de apoyo</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KOSHI</span>
+            <span class="term-es">Acción de la cadera</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">HIKI ASHI</span>
+            <span class="term-es">Recogida de la pierna</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">04</div>
+      <div class="topic-question">Formas de realización de las técnicas de pierna</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">KEAGE</span>
+            <span class="term-es">Ascendente</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KEBANASHI</span>
+            <span class="term-es">Percutante</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KEKOMI</span>
+            <span class="term-es">Penetrante</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">FUMIKOMI</span>
+            <span class="term-es">Aplastante</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">FUMIKIRI</span>
+            <span class="term-es">Cortante</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">05</div>
+      <div class="topic-question">Tipos de saludo (REI)</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">RITSU REI</span>
+            <span class="term-es">Saludo de pie</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">OTAGAINI REI</span>
+            <span class="term-es">Saludo recíproco</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">SENSEINI REI</span>
+            <span class="term-es">Saludo al maestro</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">SOMENI REI</span>
+            <span class="term-es">Saludo al frente</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">ZA REI</span>
+            <span class="term-es">Saludo de ceremonia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">06</div>
+      <div class="topic-question">¿Qué es y para qué sirve el MOKUSO?</div>
+      <div class="topic-answer">Es el acto de meditación antes o después de la clase. Sirve, al empezar, para centrarnos en el trabajo a realizar y, al terminar, para relajarnos de la tensión mantenida y volver a la actividad normal.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">07</div>
+      <div class="topic-question">¿Para qué sirve el trabajo de los KATAS?</div>
+      <div class="topic-answer">Sirve para desarrollar los elementos fundamentales del KARATE, pues en ellos están los principios básicos, las técnicas y la tradición de este Arte.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">08</div>
+      <div class="topic-question">Principales puntos en la ejecución de un KATA</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">CHAKUGAN</span>
+            <span class="term-es">Mirada</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">HYOSHI</span>
+            <span class="term-es">Ritmo</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">ZANSHIN</span>
+            <span class="term-es">Alerta continua</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KI</span>
+            <span class="term-es">Energía interna</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">ENBUSEN</span>
+            <span class="term-es">Línea de realización</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KIME</span>
+            <span class="term-es">Fuerza</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KIAI</span>
+            <span class="term-es">Grito de concentración</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">KIHAKU</span>
+            <span class="term-es">Vivencia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">09</div>
+      <div class="topic-question">¿Qué es BUNKAI KUMITE?</div>
+      <div class="topic-answer">Es la aplicación práctica de las técnicas del kata.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">10</div>
+      <div class="topic-question">¿Qué es y para qué sirve el ENBUSEN?</div>
+      <div class="topic-answer">Son las líneas de ejecución y sirve para determinar las direcciones que se deben seguir al ejecutar el kata.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">11</div>
+      <div class="topic-question">¿Para qué sirve el trabajo de KUMITE?</div>
+      <div class="topic-answer">Para demostrar la efectividad de las técnicas tanto en ataque como en defensa.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">12</div>
+      <div class="topic-question">Puntos importantes en el trabajo de KUMITE</div>
+      <div class="topic-answer">Distancia · Anticipación · Defensa · Ataque · Táctica</div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

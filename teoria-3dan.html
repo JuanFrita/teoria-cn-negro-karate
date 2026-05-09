@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teoría · CN Negro 3.º DAN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #F0D080;
+    --gold-dim: #7A5F25;
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface2: #1A1A1A;
+    --text: #F0EDE8;
+    --muted: #888880;
+    --border: rgba(201,168,76,0.2);
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    min-height: 100vh;
+    padding: 2rem 1rem 5rem;
+  }
+
+  .noise {
+    position: fixed;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--gold); }
+
+  header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .grade-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 3.5rem);
+    letter-spacing: 0.1em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .header-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .note-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .topics {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .topic {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+
+  .topic:last-child { border-bottom: none; }
+
+  .topic-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .topic-question {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .topic-answer {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .develop-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold-dim);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .term-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .term-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .term-jp {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+
+  .term-es {
+    font-size: 0.825rem;
+    color: var(--muted);
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #F5F2EC;
+      --surface: #FFFFFF;
+      --surface2: #F0EDE8;
+      --text: #0A0A0A;
+      --muted: #666;
+      --border: rgba(150,110,30,0.15);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="content">
+
+  <a class="back-link" href="index.html#teoria">← Volver</a>
+
+  <header>
+    <div class="grade-tag">Teoría · Tercer Grado</div>
+    <h1>CN Negro 3.º DAN</h1>
+    <p class="header-meta">7 temas · Incluye temario CN Negro, 1.º y 2.º DAN · Normativa RFEK 2025 v1.1</p>
+  </header>
+
+  <div class="note-box">
+    El aspirante deberá conocer el temario de los grados anteriores (CN Negro, 1.º DAN y 2.º DAN).
+  </div>
+
+  <div class="topics">
+
+    <div class="topic">
+      <div class="topic-num">01</div>
+      <div class="topic-question">Conocimiento de otro estilo y de la Normativa</div>
+      <div class="topic-answer">Además del propio estilo, el aspirante deberá conocer las características técnicas, posiciones fundamentales y fundador de cualquier otro estilo determinado por el propio aspirante. Así mismo, tendrá conocimiento del temario general de la Normativa de Grados.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">02</div>
+      <div class="topic-question">Kata voluntario: historia, técnica y aplicación</div>
+      <div class="topic-answer">Deberá conocer, a nivel teórico y en profundidad, todos los aspectos históricos, técnicos y de aplicación práctica del kata voluntario que presenta.</div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">03</div>
+      <div class="topic-question">¿Qué se consigue con el trabajo de los katas?</div>
+      <div class="topic-answer">
+        <div class="develop-tag">Desarrollar por el aspirante</div>
+        <div>El aspirante elaborará una respuesta personal y razonada sobre los beneficios del trabajo de katas en el karate.</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">04</div>
+      <div class="topic-question">Explicación de un tipo de kumite</div>
+      <div class="topic-answer">
+        <div class="develop-tag">Desarrollar por el aspirante</div>
+        <div>El aspirante explicará en profundidad un tipo de kumite a su elección.</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">05</div>
+      <div class="topic-question">Ventajas y desventajas del kumite de competición</div>
+      <div class="topic-answer">
+        <div class="develop-tag">Desarrollar por el aspirante</div>
+        <div>El aspirante argumentará las ventajas e inconvenientes del trabajo de kumite en competición reglamentada.</div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">06</div>
+      <div class="topic-question">Tipos de respiración</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">DONTO</span>
+            <span class="term-es">Normal</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">IBUKI</span>
+            <span class="term-es">Diafragmática con contracción abdominal sonora</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">IBUKI NOGARE</span>
+            <span class="term-es">Diafragmática con contracción abdominal sin ruido</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">NOGARE</span>
+            <span class="term-es">Diafragmática sin contracción abdominal</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">IBUKI SANKAI</span>
+            <span class="term-es">Profunda, concentrada, sonora</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <div class="topic-num">07</div>
+      <div class="topic-question">Tipos de kumite</div>
+      <div class="topic-answer">
+        <div class="term-list">
+          <div class="term-row">
+            <span class="term-jp">IPPON KUMITE</span>
+            <span class="term-es">Asalto a un paso y/o una técnica</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">SANBON KUMITE</span>
+            <span class="term-es">Asalto a tres pasos y/o tres técnicas</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">GOHON KUMITE</span>
+            <span class="term-es">Asalto a cinco pasos y/o cinco técnicas</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">YAKUSOKU KUMITE</span>
+            <span class="term-es">Asalto de estudio convencional entrelazado</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">JYJU IPPON KUMITE</span>
+            <span class="term-es">Asalto libre a una técnica</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">JYU KUMITE</span>
+            <span class="term-es">Asalto libre</span>
+          </div>
+          <div class="term-row">
+            <span class="term-jp">SIHAI KUMITE</span>
+            <span class="term-es">Asalto reglamentado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
