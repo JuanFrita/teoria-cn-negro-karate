@@ -2,7 +2,7 @@ export const teoriaData = {
   cn: {
     gradeTag: 'Teoría · Cinturón Negro',
     title: 'CN Negro',
-    meta: '12 temas · Normativa RFEK 2025 v1.1',
+    meta: '12 preguntas · Normativa RFEK 2025 v1.1',
     note: null,
     topics: [
       {
@@ -78,7 +78,7 @@ export const teoriaData = {
   '1dan': {
     gradeTag: 'Teoría · Primer Grado',
     title: 'CN Negro 1.º DAN',
-    meta: '12 temas · Incluye temario CN Negro · Normativa RFEK 2025 v1.1',
+    meta: '12 preguntas · Incluye temario CN Negro · Normativa RFEK 2025 v1.1',
     note: 'El aspirante deberá conocer el temario del grado anterior (CN Negro).',
     topics: [
       {
@@ -178,7 +178,7 @@ export const teoriaData = {
   '2dan': {
     gradeTag: 'Teoría · Segundo Grado',
     title: 'CN Negro 2.º DAN',
-    meta: '11 temas · Incluye temario CN Negro y 1.º DAN · Normativa RFEK 2025 v1.1',
+    meta: '11 preguntas · Incluye temario CN Negro y 1.º DAN · Normativa RFEK 2025 v1.1',
     note: 'El aspirante deberá conocer el temario de los grados anteriores (CN Negro y 1.º DAN).',
     topics: [
       {
@@ -294,7 +294,7 @@ export const teoriaData = {
   '3dan': {
     gradeTag: 'Teoría · Tercer Grado',
     title: 'CN Negro 3.º DAN',
-    meta: '7 temas · Incluye temario CN Negro, 1.º y 2.º DAN · Normativa RFEK 2025 v1.1',
+    meta: '7 preguntas · Incluye temario CN Negro, 1.º y 2.º DAN · Normativa RFEK 2025 v1.1',
     note: 'El aspirante deberá conocer el temario de los grados anteriores (CN Negro, 1.º DAN y 2.º DAN).',
     topics: [
       {

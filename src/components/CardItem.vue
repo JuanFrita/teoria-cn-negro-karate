@@ -1,7 +1,7 @@
 <template>
   <component
     :is="href ? 'a' : to ? RouterLink : 'div'"
-    v-bind="href ? { href, target: '_blank', rel: 'noopener noreferrer' } : to ? { to } : {}"
+    v-bind="href ? { href } : to ? { to } : {}"
     class="card-item group"
     :class="{ 'opacity-40 cursor-not-allowed pointer-events-none': !href && !to }"
     :aria-disabled="!href && !to ? 'true' : undefined"

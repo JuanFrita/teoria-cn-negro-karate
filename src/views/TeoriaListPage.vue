@@ -27,6 +27,6 @@ const teoriaCards = [
 ].map(card => ({
   ...card,
   to: { name: 'teoria-grade', params: { grade: card.grade } },
-  badge: `Teoría · ${teoriaData[card.grade].topics.length} temas`,
+  badge: `Teoría · ${teoriaData[card.grade].topics.length} preguntas`,
 }))
 </script>
