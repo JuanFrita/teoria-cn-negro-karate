@@ -1,7 +1,7 @@
 <template>
   <div class="border-b border-theme py-6 last:border-b-0">
     <div class="font-bebas text-sm tracking-[0.15em] text-gold-dim mb-2">{{ String(num).padStart(2, '0') }}</div>
-    <div class="text-[1.0625rem] font-bold text-app-text mb-3 leading-snug">{{ question }}</div>
+    <h2 class="text-[1.0625rem] font-bold text-app-text mb-3 leading-snug">{{ question }}</h2>
     <div class="text-base text-muted leading-relaxed">
       <slot />
     </div>

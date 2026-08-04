@@ -8,16 +8,16 @@
   >
     <BeltIcon :dans="dans" />
     <div class="flex-1">
-      <div class="text-[0.7rem] tracking-[0.2em] uppercase text-gold mb-1">{{ label }}</div>
+      <div class="text-[0.75rem] tracking-[0.16em] uppercase text-gold mb-1">{{ label }}</div>
       <div class="font-bebas text-2xl tracking-[0.08em] leading-none">{{ title }}</div>
       <div
         v-if="badge"
-        class="text-[0.6rem] tracking-[0.15em] uppercase bg-gold/10 text-gold border border-gold/25 rounded-full px-2.5 py-0.5 mt-1.5 inline-block"
+        class="text-[0.75rem] tracking-[0.12em] uppercase bg-gold/10 text-gold border border-gold/40 rounded-full px-2.5 py-1 mt-1.5 inline-block"
       >
         {{ badge }}
       </div>
     </div>
-    <div class="text-gold-dim text-xl transition-all duration-200 group-hover:translate-x-1 group-hover:text-gold">→</div>
+    <div class="card-arrow text-gold-dim text-xl">→</div>
   </component>
 </template>
 
@@ -37,16 +37,31 @@ defineProps({
 
 <style scoped>
 .card-item {
-  @apply flex items-center gap-5 bg-surface border border-theme rounded-xl px-6 py-5 no-underline text-app-text transition-all duration-200 cursor-pointer select-none outline-none;
+  @apply flex items-center gap-5 bg-surface border border-strong rounded-xl px-6 py-5 no-underline text-app-text transition-[transform,background-color,border-color,color] duration-300 ease-fluid cursor-pointer select-none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .card-item:hover,
 .card-item:focus-visible {
-  @apply bg-surface2 -translate-y-0.5;
+  @apply bg-surface2;
   border-color: var(--border-hover);
+  transform: translate3d(0, -3px, 0);
 }
 
 .card-item:active {
-  @apply translate-y-0;
+  transform: translate3d(0, 0, 0);
+}
+
+.card-arrow {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), color 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-item:hover .card-arrow,
+.card-item:focus-visible .card-arrow {
+  transform: translate3d(4px, 0, 0);
+  @apply text-gold;
 }
 </style>
