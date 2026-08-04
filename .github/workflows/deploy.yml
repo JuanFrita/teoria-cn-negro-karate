@@ -22,8 +22,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate test data
+        run: npm run check
+
       - name: Build
         run: npm run build
+        env:
+          # Definidos como secretos del repositorio. Si no existen llegan vacíos,
+          # y entonces la web se publica sin ningún script de analítica.
+          VITE_UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+          VITE_UMAMI_SRC: ${{ secrets.UMAMI_SRC }}
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
