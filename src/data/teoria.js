@@ -1,14 +1,35 @@
+// Los dos estilos del material adjunto a la Normativa. CN Negro los usa para el
+// estilo propio del aspirante; 3.er DAN, para el segundo estilo que debe elegir
+// (quien practica uno tiene el otro ya estudiado).
+const referenceStyles = [
+  {
+    name: 'Shito Ryu',
+    founder: 'Kenwa Mabuni',
+    meaning:
+      'SHI representa a Itosu y TO representa a Higaonna, los dos maestros de Mabuni. RYU significa escuela.',
+    stances: ['Moto dachi', 'Nekoashi dachi', 'Sanchin dachi', 'Zenkutsu dachi', 'Shiko dachi'],
+  },
+  {
+    name: 'Shotokan',
+    founder: 'Gichin Funakoshi',
+    meaning:
+      '«La casa de Shoto». SHOTO era el pseudónimo con el que el maestro Funakoshi firmaba sus escritos y significa «pinos oscilantes»; KAN significa casa.',
+    stances: ['Zenkutsu dachi', 'Kokutsu dachi', 'Kiba dachi', 'Hangetsu dachi', 'Sochin dachi'],
+  },
+]
+
 export const teoriaData = {
   cn: {
     gradeTag: 'Teoría · Cinturón Negro',
     title: 'CN Negro',
-    meta: '12 preguntas · Normativa RFEK 2025 v1.1',
+    meta: '12 preguntas · Normativa RFEK 2026 v1.2.1',
     note: null,
     topics: [
       {
         num: 1,
         question: 'Nombre, significado del estilo, fundador y posiciones características',
         answer: 'El aspirante deberá conocer el nombre y significado del estilo que practica, su fundador y las posiciones características del mismo.',
+        styles: referenceStyles,
       },
       {
         num: 2,
@@ -78,12 +99,13 @@ export const teoriaData = {
   '1dan': {
     gradeTag: 'Teoría · Primer Grado',
     title: 'CN Negro 1.º DAN',
-    meta: '12 preguntas · Incluye temario CN Negro · Normativa RFEK 2025 v1.1',
+    meta: '12 preguntas · Incluye temario CN Negro · Normativa RFEK 2026 v1.2.1',
     note: 'El aspirante deberá conocer el temario del grado anterior (CN Negro).',
     topics: [
       {
         num: 1,
         question: 'Características técnicas del estilo que practica',
+        develop: true,
         answer: 'El aspirante deberá conocer las características técnicas específicas del estilo que practica.',
       },
       {
@@ -178,17 +200,19 @@ export const teoriaData = {
   '2dan': {
     gradeTag: 'Teoría · Segundo Grado',
     title: 'CN Negro 2.º DAN',
-    meta: '11 preguntas · Incluye temario CN Negro y 1.º DAN · Normativa RFEK 2025 v1.1',
+    meta: '11 preguntas · Incluye temario CN Negro y 1.º DAN · Normativa RFEK 2026 v1.2.1',
     note: 'El aspirante deberá conocer el temario de los grados anteriores (CN Negro y 1.º DAN).',
     topics: [
       {
         num: 1,
         question: 'Conocimiento en profundidad del propio estilo',
+        develop: true,
         answer: 'El aspirante deberá conocer su estilo en profundidad.',
       },
       {
         num: 2,
         question: 'Bunkai de un kata superior',
+        develop: true,
         answer: 'Deberá conocer, al menos a nivel teórico, el bunkai de uno de los katas superiores que presente, determinado por el propio aspirante. El Tribunal, si lo estima oportuno, podrá pedir alguna aclaración.',
       },
       {
@@ -203,16 +227,19 @@ export const teoriaData = {
       {
         num: 4,
         question: 'Explicación completa de una posición',
+        develop: true,
         answer: 'Nombre, superficie de asentamiento, distribución del peso, situación del tronco y demás características generales, así como las posibilidades en su aplicación práctica.',
       },
       {
         num: 5,
         question: 'Explicación completa de una técnica',
+        develop: true,
         answer: 'De las presentadas en defensa, ataque o contraataque (puño, mano, codo o pierna): punto de partida, recorrido y terminación, así como las posibilidades en su aplicación práctica.',
       },
       {
         num: 6,
         question: 'Explicación y finalidad de los movimientos de un kata',
+        develop: true,
         answer: 'El aspirante explicará la finalidad de los movimientos de cualquiera de los katas que presenta.',
       },
       {
@@ -294,17 +321,19 @@ export const teoriaData = {
   '3dan': {
     gradeTag: 'Teoría · Tercer Grado',
     title: 'CN Negro 3.º DAN',
-    meta: '7 preguntas · Incluye temario CN Negro, 1.º y 2.º DAN · Normativa RFEK 2025 v1.1',
+    meta: '7 preguntas · Incluye temario CN Negro, 1.º y 2.º DAN · Normativa RFEK 2026 v1.2.1',
     note: 'El aspirante deberá conocer el temario de los grados anteriores (CN Negro, 1.º DAN y 2.º DAN).',
     topics: [
       {
         num: 1,
         question: 'Conocimiento de otro estilo y de la Normativa',
         answer: 'Además del propio estilo, el aspirante deberá conocer las características técnicas, posiciones fundamentales y fundador de cualquier otro estilo determinado por el propio aspirante. Así mismo, tendrá conocimiento del temario general de la Normativa de Grados.',
+        styles: referenceStyles,
       },
       {
         num: 2,
         question: 'Kata voluntario: historia, técnica y aplicación',
+        develop: true,
         answer: 'Deberá conocer, a nivel teórico y en profundidad, todos los aspectos históricos, técnicos y de aplicación práctica del kata voluntario que presenta.',
       },
       {
@@ -344,9 +373,9 @@ export const teoriaData = {
           { jp: 'SANBON KUMITE', es: 'Asalto a tres pasos y/o tres técnicas' },
           { jp: 'GOHON KUMITE', es: 'Asalto a cinco pasos y/o cinco técnicas' },
           { jp: 'YAKUSOKU KUMITE', es: 'Asalto de estudio convencional entrelazado' },
-          { jp: 'JYJU IPPON KUMITE', es: 'Asalto libre a una técnica' },
+          { jp: 'JYU IPPON KUMITE', es: 'Asalto libre a una técnica' },
           { jp: 'JYU KUMITE', es: 'Asalto libre' },
-          { jp: 'SIHAI KUMITE', es: 'Asalto reglamentado' },
+          { jp: 'SHIAI KUMITE', es: 'Asalto reglamentado' },
         ],
       },
     ],

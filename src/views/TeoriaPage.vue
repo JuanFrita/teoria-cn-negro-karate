@@ -4,6 +4,7 @@
     :grade-tag="grade.gradeTag"
     :title="grade.title"
     :meta="grade.meta"
+    back-label="← Toda la teoría"
   >
     <template v-if="grade.note" #note>
       <NoteBox>{{ grade.note }}</NoteBox>
@@ -15,9 +16,13 @@
       :num="topic.num"
       :question="topic.question"
     >
-      <template v-if="topic.develop">
-        <DevelopBadge />
+      <!-- `develop` is orthogonal to the content type: a topic can both be
+           developed by the candidate and carry terms or reference material. -->
+      <DevelopBadge v-if="topic.develop" />
+
+      <template v-if="topic.styles">
         <p>{{ topic.answer }}</p>
+        <StyleList :styles="topic.styles" />
       </template>
       <template v-else-if="topic.terms">
         <TermList :terms="topic.terms" />
@@ -29,7 +34,7 @@
           </template>
         </p>
       </template>
-      <template v-else>{{ topic.answer }}</template>
+      <p v-else>{{ topic.answer }}</p>
     </TopicItem>
   </TheoryPage>
 </template>
@@ -41,6 +46,7 @@ import { teoriaData } from '../data/teoria.js'
 import TheoryPage from '../components/TheoryPage.vue'
 import TopicItem from '../components/TopicItem.vue'
 import TermList from '../components/TermList.vue'
+import StyleList from '../components/StyleList.vue'
 import NoteBox from '../components/NoteBox.vue'
 import DevelopBadge from '../components/DevelopBadge.vue'
 
