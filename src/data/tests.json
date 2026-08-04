@@ -1,0 +1,974 @@
+{
+  "cn": {
+    "gradeTag": "Test · Cinturón Negro",
+    "title": "CN Negro",
+    "source": "Normativa RFEK 2026 v1.2.1",
+    "questions": [
+      {
+        "id": "cn-karate",
+        "question": "¿Qué significa KARATE?",
+        "options": [
+          "Es un nombre, no tiene significado",
+          "KARA significa vacío y TE mano",
+          "KARA significa mano y TE vacío"
+        ],
+        "answer": 1,
+        "explanation": "KARA es «vacío» y TE es «mano»."
+      },
+      {
+        "id": "cn-zanshin",
+        "question": "¿Qué significa ZANSHIN?",
+        "options": [
+          "El aprovechamiento de la energía física y mental en el momento del impacto",
+          "La liberación de la energía interna mediante un grito",
+          "Alerta continua: estado de alerta constante ante el posible contraataque del oponente"
+        ],
+        "answer": 2,
+        "explanation": "Alerta continua. Estado de compromiso continuado en el cual el contendiente mantiene la alerta ante la potencialidad del oponente para contraatacar."
+      },
+      {
+        "id": "cn-chakugan",
+        "question": "¿Qué significa CHAKUGAN?",
+        "options": ["Concentración", "Energía", "Mirada"],
+        "answer": 2,
+        "explanation": "CHAKUGAN es la mirada."
+      },
+      {
+        "id": "cn-kime",
+        "question": "¿Qué es KIME?",
+        "options": [
+          "El aprovechamiento de la energía física y mental en el momento del impacto",
+          "La liberación de la energía interna mediante un grito",
+          "Alerta continua: estado de alerta constante ante el posible contraataque del oponente"
+        ],
+        "answer": 0,
+        "explanation": "El aprovechamiento de la energía física y mental en el momento del impacto. La fuerza."
+      },
+      {
+        "id": "cn-ki",
+        "question": "¿Qué es KI?",
+        "options": ["El pensamiento interior", "La energía interior", "Un grito"],
+        "answer": 1,
+        "explanation": "KI es la energía interior."
+      },
+      {
+        "id": "cn-kiai",
+        "question": "¿Qué es KIAI?",
+        "options": [
+          "Un grito que solo se usa para marcar el fin de una línea de un kata",
+          "La liberación de la energía interna mediante un grito",
+          "Un grito para demostrar intensidad ante el sensei"
+        ],
+        "answer": 1,
+        "explanation": "KIAI es la liberación de la energía interna (KI) mediante un grito."
+      },
+      {
+        "id": "cn-rei",
+        "question": "¿Qué significa REI?",
+        "options": ["Saludo", "Posición", "Técnica"],
+        "answer": 0,
+        "explanation": "REI es el saludo."
+      },
+      {
+        "id": "cn-finalidad-saludo",
+        "question": "¿Por qué se saluda y cuál es la finalidad del saludo?",
+        "options": [
+          "El saludo (REI) se ha mantenido por estética de la cultura japonesa",
+          "El saludo (REI) se hace para demostrar superioridad técnica ante el oponente",
+          "El saludo (REI) se hace por cortesía, para demostrar respeto, humildad y gentileza"
+        ],
+        "answer": 2,
+        "explanation": "Se saluda por cortesía, para demostrar respeto, humildad y gentileza."
+      },
+      {
+        "id": "cn-jodan",
+        "question": "¿Qué nivel para golpear es JODAN?",
+        "options": ["Nivel alto (cabeza)", "Nivel medio (tronco)", "Nivel bajo (de la cintura a los pies)"],
+        "answer": 0,
+        "explanation": "JODAN es el nivel alto: la cabeza."
+      },
+      {
+        "id": "cn-chudan",
+        "question": "¿Qué nivel para golpear es CHUDAN?",
+        "options": ["Nivel bajo (de la cintura a los pies)", "Nivel medio (abdomen, costados, espalda, pecho y hombros)", "Nivel alto (cabeza)"],
+        "answer": 1,
+        "explanation": "CHUDAN es el nivel medio: abdomen, costados, espalda, pecho y hombros."
+      },
+      {
+        "id": "cn-gedan",
+        "question": "¿Qué nivel para golpear es GEDAN?",
+        "options": ["Nivel alto (cabeza)", "Nivel medio (tronco)", "Nivel bajo (desde la cintura a los pies)"],
+        "answer": 2,
+        "explanation": "GEDAN es el nivel bajo: desde la cintura a los pies."
+      },
+      {
+        "id": "cn-kata",
+        "question": "Significado de la palabra KATA",
+        "options": [
+          "KATA es «forma»: una serie de técnicas de defensa y ataque, de puño y pierna, realizadas con un orden preestablecido contra adversarios imaginarios",
+          "KATA es «técnica»: una serie técnica realizada sin un orden preestablecido contra adversarios imaginarios",
+          "KATA es «demostración»: una serie de técnicas de exhibición sin adversario"
+        ],
+        "answer": 0,
+        "explanation": "KATA es «forma». Serie de técnicas (defensa y ataque, de puño y pierna) realizadas con un orden preestablecido contra adversarios imaginarios."
+      },
+      {
+        "id": "cn-kumite",
+        "question": "Significado de la palabra KUMITE",
+        "options": ["Demostración", "Puntuación", "Combate"],
+        "answer": 2,
+        "explanation": "KUMITE es el combate."
+      },
+      {
+        "id": "cn-shito-fundador",
+        "question": "¿Quién es el fundador del estilo Shito Ryu?",
+        "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Chojun Miyagi"],
+        "answer": 1,
+        "explanation": "Kenwa Mabuni fundó el Shito Ryu. SHI viene de Itosu y TO de Higaonna, sus dos maestros; RYU significa escuela."
+      },
+      {
+        "id": "cn-shotokan-fundador",
+        "question": "¿Quién es el fundador del estilo Shotokan?",
+        "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Masutatsu Oyama"],
+        "answer": 0,
+        "explanation": "Gichin Funakoshi fundó el Shotokan."
+      },
+      {
+        "id": "cn-shotokan-significado",
+        "question": "¿Qué significa SHOTOKAN?",
+        "options": [
+          "«La escuela de los maestros», por los maestros que la fundaron",
+          "«La casa de Shoto»: SHOTO era el pseudónimo de Funakoshi y significa «pinos oscilantes»; KAN es casa",
+          "«El camino de la mano vacía», del japonés SHO (mano) y TO (vacío)"
+        ],
+        "answer": 1,
+        "explanation": "SHOTO («pinos oscilantes») era el pseudónimo con el que Funakoshi firmaba sus escritos y KAN significa casa: «la casa de Shoto»."
+      }
+    ]
+  },
+
+  "1dan": {
+    "gradeTag": "Test · Primer Grado",
+    "title": "CN Negro 1.º DAN",
+    "source": "Normativa RFEK 2026 v1.2.1",
+    "blocks": [
+      { "id": "tecnica", "label": "Técnicas de brazo y pierna" },
+      { "id": "saludos", "label": "Saludos y MOKUSO" },
+      { "id": "kata-kumite", "label": "Kata y kumite" }
+    ],
+    "questions": [
+      {
+        "id": "1dan-tsukite",
+        "block": "tecnica",
+        "question": "En las técnicas de brazo, ¿qué es TSUKITE?",
+        "options": ["El que ejecuta la acción", "El que recoge hacia atrás", "La acción de la cadera"],
+        "answer": 0,
+        "explanation": "TSUKITE es el brazo que ejecuta la acción."
+      },
+      {
+        "id": "1dan-hikite",
+        "block": "tecnica",
+        "question": "En las técnicas de brazo, ¿qué es HIKITE?",
+        "options": ["El que ejecuta la acción", "El que recoge hacia atrás", "La base de apoyo"],
+        "answer": 1,
+        "explanation": "HIKITE es el brazo que recoge hacia atrás."
+      },
+      {
+        "id": "1dan-koshi-kaiten",
+        "block": "tecnica",
+        "question": "En las técnicas de brazo, ¿qué es KOSHI KAITEN?",
+        "options": ["La extensión del brazo", "La acción de la cadera", "La recogida del pie"],
+        "answer": 1,
+        "explanation": "KOSHI KAITEN es la acción de la cadera en las técnicas de brazo."
+      },
+      {
+        "id": "1dan-kakae-komi-ashi",
+        "block": "tecnica",
+        "question": "En las técnicas de pierna, ¿qué es KAKAE KOMI ASHI?",
+        "options": ["Elevación de rodilla", "Extensión de la pierna", "Recogida de la pierna"],
+        "answer": 0,
+        "explanation": "KAKAE KOMI ASHI es la elevación de rodilla."
+      },
+      {
+        "id": "1dan-keri-hanashi",
+        "block": "tecnica",
+        "question": "En las técnicas de pierna, ¿qué es KERI HANASHI?",
+        "options": ["Base de apoyo", "Extensión de la pierna", "Elevación de rodilla"],
+        "answer": 1,
+        "explanation": "KERI HANASHI es la extensión de la pierna."
+      },
+      {
+        "id": "1dan-jiku-ashi",
+        "block": "tecnica",
+        "question": "En las técnicas de pierna, ¿qué es JIKU ASHI?",
+        "options": ["Recogida de la pierna", "Acción de la cadera", "Base de apoyo"],
+        "answer": 2,
+        "explanation": "JIKU ASHI es la base de apoyo."
+      },
+      {
+        "id": "1dan-koshi",
+        "block": "tecnica",
+        "question": "En las técnicas de pierna, ¿qué es KOSHI?",
+        "options": ["La acción de la cadera", "La base de apoyo", "La recogida de la pierna"],
+        "answer": 0,
+        "explanation": "KOSHI es la acción de la cadera. En las técnicas de brazo el mismo punto se llama KOSHI KAITEN."
+      },
+      {
+        "id": "1dan-hiki-ashi",
+        "block": "tecnica",
+        "question": "En las técnicas de pierna, ¿qué es HIKI ASHI?",
+        "options": ["Recogida de la pierna", "Elevación de rodilla", "Extensión de la pierna"],
+        "answer": 0,
+        "explanation": "HIKI ASHI es la recogida de la pierna."
+      },
+      {
+        "id": "1dan-keage",
+        "block": "tecnica",
+        "question": "Formas de realización de las técnicas de pierna: ¿qué es KEAGE?",
+        "options": ["Penetrante", "Ascendente", "Cortante"],
+        "answer": 1,
+        "explanation": "KEAGE es ascendente."
+      },
+      {
+        "id": "1dan-kebanashi",
+        "block": "tecnica",
+        "question": "Formas de realización de las técnicas de pierna: ¿qué es KEBANASHI?",
+        "options": ["Percutante", "Penetrante", "Ascendente"],
+        "answer": 0,
+        "explanation": "KEBANASHI es percutante."
+      },
+      {
+        "id": "1dan-kekomi",
+        "block": "tecnica",
+        "question": "Formas de realización de las técnicas de pierna: ¿qué es KEKOMI?",
+        "options": ["Percutante", "Aplastante", "Penetrante"],
+        "answer": 2,
+        "explanation": "KEKOMI es penetrante."
+      },
+      {
+        "id": "1dan-fumikomi",
+        "block": "tecnica",
+        "question": "Formas de realización de las técnicas de pierna: ¿qué es FUMIKOMI?",
+        "options": ["Aplastante", "Cortante", "Percutante"],
+        "answer": 0,
+        "explanation": "FUMIKOMI es aplastante."
+      },
+      {
+        "id": "1dan-fumikiri",
+        "block": "tecnica",
+        "question": "Formas de realización de las técnicas de pierna: ¿qué es FUMIKIRI?",
+        "options": ["Aplastante", "Ascendente", "Cortante"],
+        "answer": 2,
+        "explanation": "FUMIKIRI es cortante."
+      },
+      {
+        "id": "1dan-ritsu-rei",
+        "block": "saludos",
+        "question": "¿Qué es RITSU REI?",
+        "options": ["Saludo de pie", "Saludo de ceremonia", "Saludo recíproco"],
+        "answer": 0,
+        "explanation": "RITSU REI es el saludo de pie."
+      },
+      {
+        "id": "1dan-za-rei",
+        "block": "saludos",
+        "question": "¿Qué es ZA REI?",
+        "options": ["Saludo al maestro", "Saludo de ceremonia", "Saludo al frente"],
+        "answer": 1,
+        "explanation": "ZA REI es el saludo de ceremonia."
+      },
+      {
+        "id": "1dan-otagaini-rei",
+        "block": "saludos",
+        "question": "¿Qué es OTAGAINI REI?",
+        "options": ["Saludo recíproco", "Saludo al frente", "Saludo de pie"],
+        "answer": 0,
+        "explanation": "OTAGAINI REI es el saludo recíproco."
+      },
+      {
+        "id": "1dan-someni-rei",
+        "block": "saludos",
+        "question": "¿Qué es SOMENI REI?",
+        "options": ["Saludo al maestro", "Saludo recíproco", "Saludo al frente"],
+        "answer": 2,
+        "explanation": "SOMENI REI es el saludo al frente."
+      },
+      {
+        "id": "1dan-senseini-rei",
+        "block": "saludos",
+        "question": "¿Qué es SENSEINI REI?",
+        "options": ["Saludo al maestro", "Saludo al frente", "Saludo recíproco"],
+        "answer": 0,
+        "explanation": "SENSEINI REI es el saludo al maestro."
+      },
+      {
+        "id": "1dan-mokuso",
+        "block": "saludos",
+        "question": "¿Qué es y para qué sirve el MOKUSO?",
+        "options": [
+          "El saludo formal con el que se abre y se cierra la clase",
+          "El acto de meditación antes o después de la clase: al empezar centra en el trabajo y al terminar relaja la tensión",
+          "El calentamiento articular previo al trabajo de kihon"
+        ],
+        "answer": 1,
+        "explanation": "Es el acto de meditación antes o después de la clase. Al empezar sirve para centrarnos en el trabajo a realizar y, al terminar, para relajarnos de la tensión mantenida y volver a la actividad normal."
+      },
+      {
+        "id": "1dan-para-que-katas",
+        "block": "kata-kumite",
+        "question": "¿Para qué sirve el trabajo de los katas?",
+        "options": [
+          "Para desarrollar los elementos fundamentales del karate: en ellos están los principios básicos, las técnicas y la tradición de este arte",
+          "Únicamente para preparar la competición de kata",
+          "Para memorizar el orden de los exámenes de grado"
+        ],
+        "answer": 0,
+        "explanation": "Sirve para desarrollar los elementos fundamentales del KARATE, pues en ellos están los principios básicos, las técnicas y la tradición de este arte."
+      },
+      {
+        "id": "1dan-hyoshi",
+        "block": "kata-kumite",
+        "question": "En la ejecución de un kata, ¿qué es HYOSHI?",
+        "options": ["El ritmo", "La vivencia", "La mirada"],
+        "answer": 0,
+        "explanation": "HYOSHI es el ritmo."
+      },
+      {
+        "id": "1dan-kihaku",
+        "block": "kata-kumite",
+        "question": "En la ejecución de un kata, ¿qué es KIHAKU?",
+        "options": ["El ritmo", "La vivencia", "La energía interna"],
+        "answer": 1,
+        "explanation": "KIHAKU es la vivencia."
+      },
+      {
+        "id": "1dan-kiai-kata",
+        "block": "kata-kumite",
+        "question": "Entre los puntos de ejecución de un kata, ¿qué es el KIAI?",
+        "options": ["La línea de realización", "El ritmo", "El grito de concentración"],
+        "answer": 2,
+        "explanation": "KIAI es el grito de concentración, la liberación de la energía interna."
+      },
+      {
+        "id": "1dan-bunkai-kumite",
+        "block": "kata-kumite",
+        "question": "¿Qué es BUNKAI KUMITE?",
+        "options": [
+          "El combate libre sin reglas",
+          "La aplicación práctica de las técnicas del kata",
+          "La línea de ejecución del kata"
+        ],
+        "answer": 1,
+        "explanation": "Es la aplicación práctica de las técnicas del kata."
+      },
+      {
+        "id": "1dan-enbusen",
+        "block": "kata-kumite",
+        "question": "¿Qué es y para qué sirve el ENBUSEN?",
+        "options": [
+          "Son las líneas de ejecución y sirven para determinar las direcciones que se deben seguir al ejecutar el kata",
+          "Es el ritmo interno del kata y sirve para marcar las pausas",
+          "Es el saludo inicial del kata y sirve para pedir permiso al tribunal"
+        ],
+        "answer": 0,
+        "explanation": "Son las líneas de ejecución y sirven para determinar las direcciones que se deben seguir al ejecutar el kata."
+      },
+      {
+        "id": "1dan-para-que-kumite",
+        "block": "kata-kumite",
+        "question": "¿Para qué sirve el trabajo de KUMITE?",
+        "options": [
+          "Para aprender el orden de los katas superiores",
+          "Para demostrar la efectividad de las técnicas tanto en ataque como en defensa",
+          "Exclusivamente para competir en campeonatos oficiales"
+        ],
+        "answer": 1,
+        "explanation": "Para demostrar la efectividad de las técnicas tanto en ataque como en defensa."
+      },
+      {
+        "id": "1dan-puntos-kumite",
+        "block": "kata-kumite",
+        "question": "Puntos importantes en el trabajo de kumite",
+        "options": [
+          "Distancia, anticipación, defensa, ataque y táctica",
+          "Ritmo, vivencia, mirada, fuerza y grito",
+          "Elevación, extensión, apoyo, cadera y recogida"
+        ],
+        "answer": 0,
+        "explanation": "Distancia · Anticipación · Defensa · Ataque · Táctica."
+      }
+    ]
+  },
+
+  "2dan": {
+    "gradeTag": "Test · Segundo Grado",
+    "title": "CN Negro 2.º DAN",
+    "source": "Normativa RFEK 2026 v1.2.1",
+    "blocks": [
+      { "id": "fundamentos", "label": "KARATE DO y criterios de examen" },
+      { "id": "cadera-tronco", "label": "Cadera y posiciones del tronco" },
+      { "id": "mano-brazo", "label": "Partes de la mano y el brazo" },
+      { "id": "pie-pierna", "label": "Partes del pie y la pierna" },
+      { "id": "desplazamientos", "label": "Desplazamientos" }
+    ],
+    "questions": [
+      {
+        "id": "2dan-karate-do",
+        "block": "fundamentos",
+        "question": "¿Qué significa KARATE DO?",
+        "options": [
+          "KARA vacío, TE mano y DO camino espiritual",
+          "KARA mano, TE vacío y DO escuela",
+          "KARA fuerza, TE puño y DO maestro"
+        ],
+        "answer": 0,
+        "explanation": "KARA significa vacío, TE significa mano y DO camino espiritual."
+      },
+      {
+        "id": "2dan-explicar-posicion",
+        "block": "fundamentos",
+        "question": "Al explicar una posición, ¿qué debe detallar el aspirante?",
+        "options": [
+          "Solo el nombre en japonés y su traducción",
+          "Nombre, superficie de asentamiento, distribución del peso, situación del tronco, características generales y aplicación práctica",
+          "Únicamente los katas en los que aparece"
+        ],
+        "answer": 1,
+        "explanation": "Nombre, superficie de asentamiento, distribución del peso, situación del tronco y demás características generales, así como las posibilidades en su aplicación práctica."
+      },
+      {
+        "id": "2dan-explicar-tecnica",
+        "block": "fundamentos",
+        "question": "Al explicar una técnica, ¿qué debe definir fundamentalmente el aspirante?",
+        "options": [
+          "El número de repeticiones y la respiración empleada",
+          "El kata de origen y su fundador",
+          "Punto de partida, recorrido y terminación, además de su aplicación práctica"
+        ],
+        "answer": 2,
+        "explanation": "Punto de partida, recorrido y terminación, así como las posibilidades en su aplicación práctica."
+      },
+      {
+        "id": "2dan-jyun-kaiten",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es JYUN KAITEN?",
+        "options": [
+          "En el mismo sentido que la técnica",
+          "En sentido contrario a la técnica",
+          "En avance"
+        ],
+        "answer": 0,
+        "explanation": "JYUN KAITEN es la cadera girando en el mismo sentido que la técnica."
+      },
+      {
+        "id": "2dan-gyaku-kaiten",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es GYAKU KAITEN?",
+        "options": [
+          "En el mismo sentido que la técnica",
+          "En sentido contrario a la técnica",
+          "En retroceso"
+        ],
+        "answer": 1,
+        "explanation": "GYAKU KAITEN es la cadera girando en sentido contrario a la técnica."
+      },
+      {
+        "id": "2dan-zenpo",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es ZENPO?",
+        "options": ["En avance", "En retroceso", "Ascendente"],
+        "answer": 0,
+        "explanation": "ZENPO es en avance."
+      },
+      {
+        "id": "2dan-koho",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es KOHO?",
+        "options": ["Descendente", "En retroceso", "En avance"],
+        "answer": 1,
+        "explanation": "KOHO es en retroceso."
+      },
+      {
+        "id": "2dan-joho",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es JOHO?",
+        "options": ["Ascendente", "Descendente", "Circular"],
+        "answer": 0,
+        "explanation": "JOHO es ascendente."
+      },
+      {
+        "id": "2dan-kaho",
+        "block": "cadera-tronco",
+        "question": "En el uso de la cadera, ¿qué es KAHO?",
+        "options": ["Ascendente", "En retroceso", "Descendente"],
+        "answer": 2,
+        "explanation": "KAHO es descendente."
+      },
+      {
+        "id": "2dan-shomen",
+        "block": "cadera-tronco",
+        "question": "¿Qué posición del tronco es SHOMEN (MAE)?",
+        "options": ["Frontal", "Lateral", "Semifrontal"],
+        "answer": 0,
+        "explanation": "SHOMEN o MAE es la posición frontal."
+      },
+      {
+        "id": "2dan-sokumen",
+        "block": "cadera-tronco",
+        "question": "¿Qué posición del tronco es SOKUMEN (YOKO)?",
+        "options": ["Frontal", "Lateral", "Inversa semifrontal"],
+        "answer": 1,
+        "explanation": "SOKUMEN o YOKO es la posición lateral."
+      },
+      {
+        "id": "2dan-hanmi",
+        "block": "cadera-tronco",
+        "question": "¿Qué posición del tronco es HANMI?",
+        "options": ["Frontal", "Lateral", "Semifrontal"],
+        "answer": 2,
+        "explanation": "HANMI es semifrontal."
+      },
+      {
+        "id": "2dan-gyaku-hanmi",
+        "block": "cadera-tronco",
+        "question": "¿Qué posición del tronco es GYAKU HANMI?",
+        "options": ["Inversa semifrontal", "Semifrontal", "Lateral"],
+        "answer": 0,
+        "explanation": "GYAKU HANMI es la inversa semifrontal."
+      },
+      {
+        "id": "2dan-seiken",
+        "block": "mano-brazo",
+        "question": "¿Qué es SEIKEN?",
+        "options": ["El puño frontal", "El puño del revés", "El puño de martillo"],
+        "answer": 0,
+        "explanation": "SEIKEN es el puño frontal."
+      },
+      {
+        "id": "2dan-uraken",
+        "block": "mano-brazo",
+        "question": "¿Qué es URAKEN?",
+        "options": ["El puño frontal", "El puño del revés", "Los nudillos"],
+        "answer": 1,
+        "explanation": "URAKEN es el puño del revés."
+      },
+      {
+        "id": "2dan-kentsui",
+        "block": "mano-brazo",
+        "question": "¿Qué es KENTSUI o TETTSUI?",
+        "options": ["El puño de martillo", "Los nudillos", "El puño del dedo índice"],
+        "answer": 0,
+        "explanation": "KENTSUI o TETTSUI es el puño de martillo."
+      },
+      {
+        "id": "2dan-nukite",
+        "block": "mano-brazo",
+        "question": "¿Qué es NUKITE?",
+        "options": ["La base de la palma de la mano", "La punta de los dedos", "El puño de martillo"],
+        "answer": 1,
+        "explanation": "NUKITE es la punta de los dedos."
+      },
+      {
+        "id": "2dan-shuto",
+        "block": "mano-brazo",
+        "question": "¿Qué es SHUTO?",
+        "options": ["El borde externo de la mano", "El borde interno de la mano", "El dorso de la mano"],
+        "answer": 0,
+        "explanation": "SHUTO es el borde externo de la mano."
+      },
+      {
+        "id": "2dan-haito",
+        "block": "mano-brazo",
+        "question": "¿Qué es HAITO?",
+        "options": ["El borde externo de la mano", "El borde interno de la mano", "La palma de la mano"],
+        "answer": 1,
+        "explanation": "HAITO es el borde interno de la mano."
+      },
+      {
+        "id": "2dan-teisho",
+        "block": "mano-brazo",
+        "question": "¿Qué es TEISHO o SHOTEI?",
+        "options": ["El dorso de la mano", "La base de la palma de la mano", "El extremo interior de la muñeca"],
+        "answer": 1,
+        "explanation": "TEISHO o SHOTEI es la base de la palma de la mano."
+      },
+      {
+        "id": "2dan-seiryuto",
+        "block": "mano-brazo",
+        "question": "¿Qué es SEIRYUTO?",
+        "options": [
+          "La parte inferior de la muñeca",
+          "El extremo interior de la muñeca",
+          "El borde interno de la mano"
+        ],
+        "answer": 0,
+        "explanation": "SEIRYUTO es la parte inferior de la muñeca."
+      },
+      {
+        "id": "2dan-keito",
+        "block": "mano-brazo",
+        "question": "¿Qué es KEITO?",
+        "options": [
+          "La parte inferior de la muñeca",
+          "El extremo interior de la muñeca",
+          "El borde externo de la mano"
+        ],
+        "answer": 1,
+        "explanation": "KEITO es el extremo interior de la muñeca. No confundir con SEIRYUTO, que es la parte inferior."
+      },
+      {
+        "id": "2dan-kentos",
+        "block": "mano-brazo",
+        "question": "¿Qué son los KENTOS?",
+        "options": ["Los nudillos", "El dorso de la mano", "La base de la palma"],
+        "answer": 0,
+        "explanation": "Los KENTOS son los nudillos."
+      },
+      {
+        "id": "2dan-haisu",
+        "block": "mano-brazo",
+        "question": "¿Qué es HAISU?",
+        "options": ["Los nudillos", "El dorso de la mano", "La palma de la mano"],
+        "answer": 1,
+        "explanation": "HAISU es el dorso de la mano."
+      },
+      {
+        "id": "2dan-nakadaka-ken",
+        "block": "mano-brazo",
+        "question": "¿Qué es NAKADAKA KEN?",
+        "options": ["El puño del medio dedo", "El puño del dedo índice", "El puño frontal"],
+        "answer": 0,
+        "explanation": "NAKADAKA KEN es el puño del medio dedo."
+      },
+      {
+        "id": "2dan-nakadaka-ippon-ken",
+        "block": "mano-brazo",
+        "question": "¿Qué es NAKADAKA IPPON KEN?",
+        "options": ["El puño del medio dedo", "El puño del dedo índice", "El puño del revés"],
+        "answer": 1,
+        "explanation": "NAKADAKA IPPON KEN es el puño del dedo índice."
+      },
+      {
+        "id": "2dan-empi",
+        "block": "mano-brazo",
+        "question": "¿Qué es EMPI o HIJI?",
+        "options": ["El codo", "El antebrazo", "La muñeca"],
+        "answer": 0,
+        "explanation": "EMPI o HIJI es el codo."
+      },
+      {
+        "id": "2dan-haiwan",
+        "block": "mano-brazo",
+        "question": "¿Qué es HAIWAN o UDE?",
+        "options": ["El codo", "El antebrazo", "El hombro"],
+        "answer": 1,
+        "explanation": "HAIWAN o UDE es el antebrazo."
+      },
+      {
+        "id": "2dan-sokuto",
+        "block": "pie-pierna",
+        "question": "¿Qué es SOKUTO?",
+        "options": ["El canto externo del pie", "La planta del pie", "El talón"],
+        "answer": 0,
+        "explanation": "SOKUTO es el canto externo del pie."
+      },
+      {
+        "id": "2dan-sokutei",
+        "block": "pie-pierna",
+        "question": "¿Qué es SOKUTEI?",
+        "options": ["El canto externo del pie", "La planta del pie", "El empeine"],
+        "answer": 1,
+        "explanation": "SOKUTEI es la planta del pie. No confundir con JO SOKUTEI, que es la base de los dedos."
+      },
+      {
+        "id": "2dan-kakato",
+        "block": "pie-pierna",
+        "question": "¿Qué es KAKATO?",
+        "options": ["El talón", "El empeine", "La rodilla"],
+        "answer": 0,
+        "explanation": "KAKATO es el talón."
+      },
+      {
+        "id": "2dan-heisoku",
+        "block": "pie-pierna",
+        "question": "¿Qué es HEISOKU?",
+        "options": ["El talón", "El empeine", "La planta del pie"],
+        "answer": 1,
+        "explanation": "HEISOKU es el empeine."
+      },
+      {
+        "id": "2dan-jo-sokutei",
+        "block": "pie-pierna",
+        "question": "¿Qué es JO SOKUTEI?",
+        "options": ["La base de los dedos del pie", "La punta de los dedos del pie", "El canto externo del pie"],
+        "answer": 0,
+        "explanation": "JO SOKUTEI es la base de los dedos del pie."
+      },
+      {
+        "id": "2dan-tsumasaki",
+        "block": "pie-pierna",
+        "question": "¿Qué es TSUMASAKI?",
+        "options": ["La base de los dedos del pie", "La punta de los dedos del pie", "El empeine"],
+        "answer": 1,
+        "explanation": "TSUMASAKI es la punta de los dedos del pie."
+      },
+      {
+        "id": "2dan-hiza",
+        "block": "pie-pierna",
+        "question": "¿Qué es HIZA?",
+        "options": ["El talón", "La planta del pie", "La rodilla"],
+        "answer": 2,
+        "explanation": "HIZA es la rodilla."
+      },
+      {
+        "id": "2dan-de-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es DE ASHI?",
+        "options": ["Hacia delante", "Hacia atrás", "Lateral"],
+        "answer": 0,
+        "explanation": "DE ASHI es el desplazamiento hacia delante."
+      },
+      {
+        "id": "2dan-hiri-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es HIRI ASHI?",
+        "options": ["Hacia delante", "Hacia atrás", "Circular"],
+        "answer": 1,
+        "explanation": "HIRI ASHI es el desplazamiento hacia atrás."
+      },
+      {
+        "id": "2dan-yoko-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es YOKO ASHI?",
+        "options": ["Lateral", "Circular", "En salto"],
+        "answer": 0,
+        "explanation": "YOKO ASHI es el desplazamiento lateral."
+      },
+      {
+        "id": "2dan-mawari-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es MAWARI ASHI?",
+        "options": ["Lateral", "Circular", "En salto"],
+        "answer": 1,
+        "explanation": "MAWARI ASHI es el desplazamiento circular."
+      },
+      {
+        "id": "2dan-tobi-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es TOBI ASHI?",
+        "options": ["De ambos pies", "En salto", "Circular"],
+        "answer": 1,
+        "explanation": "TOBI ASHI es el desplazamiento en salto."
+      },
+      {
+        "id": "2dan-yori-ashi",
+        "block": "desplazamientos",
+        "question": "¿Qué desplazamiento es YORI ASHI?",
+        "options": ["De ambos pies", "En salto", "Hacia atrás"],
+        "answer": 0,
+        "explanation": "YORI ASHI es el desplazamiento de ambos pies."
+      },
+      {
+        "id": "2dan-hidari",
+        "block": "desplazamientos",
+        "question": "Al matizar un desplazamiento, ¿qué significa HIDARI?",
+        "options": ["Izquierda", "Derecha", "Diagonal"],
+        "answer": 0,
+        "explanation": "HIDARI es izquierda."
+      },
+      {
+        "id": "2dan-migi",
+        "block": "desplazamientos",
+        "question": "Al matizar un desplazamiento, ¿qué significa MIGI?",
+        "options": ["Izquierda", "Derecha", "Diagonal"],
+        "answer": 1,
+        "explanation": "MIGI es derecha."
+      },
+      {
+        "id": "2dan-naname",
+        "block": "desplazamientos",
+        "question": "Al matizar un desplazamiento, ¿qué significa NANAME?",
+        "options": ["Izquierda", "Derecha", "Diagonal"],
+        "answer": 2,
+        "explanation": "NANAME es diagonal."
+      }
+    ]
+  },
+
+  "3dan": {
+    "gradeTag": "Test · Tercer Grado",
+    "title": "CN Negro 3.º DAN",
+    "source": "Normativa RFEK 2026 v1.2.1",
+    "blocks": [
+      { "id": "estilo-kata", "label": "Estilo y kata" },
+      { "id": "respiracion", "label": "Tipos de respiración" },
+      { "id": "kumite", "label": "Tipos de kumite" }
+    ],
+    "questions": [
+      {
+        "id": "3dan-otro-estilo",
+        "block": "estilo-kata",
+        "question": "Además de su propio estilo, ¿qué debe conocer el aspirante a 3.er DAN?",
+        "options": [
+          "Las características técnicas, posiciones fundamentales y fundador de otro estilo a su elección, además del temario general de la Normativa",
+          "Todos los katas de todos los estilos reconocidos",
+          "El reglamento de competición de kumite al completo"
+        ],
+        "answer": 0,
+        "explanation": "Deberá conocer las características técnicas, posiciones fundamentales y fundador de cualquier otro estilo determinado por el aspirante, así como el temario general de la Normativa."
+      },
+      {
+        "id": "3dan-kata-voluntario",
+        "block": "estilo-kata",
+        "question": "Sobre el kata voluntario que presenta, el aspirante debe conocer…",
+        "options": [
+          "Solo su enbusen y su nombre en japonés",
+          "Todos los aspectos históricos, técnicos y de aplicación práctica, a nivel teórico y en profundidad",
+          "Únicamente el bunkai de los tres primeros movimientos"
+        ],
+        "answer": 1,
+        "explanation": "A nivel teórico y en profundidad: todos los aspectos históricos, técnicos y de aplicación práctica del kata voluntario que presenta."
+      },
+      {
+        "id": "3dan-bunkai-2dan",
+        "block": "estilo-kata",
+        "question": "El bunkai de un kata superior que exige el temario, ¿de quién depende su elección?",
+        "options": [
+          "Lo elige el tribunal por sorteo",
+          "Lo asigna la federación autonómica al inscribirse",
+          "Lo determina el propio aspirante, y el tribunal puede pedirle aclaraciones"
+        ],
+        "answer": 2,
+        "explanation": "El kata lo determina el propio aspirante; el tribunal, si lo estima oportuno, podrá pedirle alguna aclaración."
+      },
+      {
+        "id": "3dan-donto",
+        "block": "respiracion",
+        "question": "¿Qué tipo de respiración es DONTO?",
+        "options": ["Normal", "Diafragmática sin contracción abdominal", "Profunda, concentrada y sonora"],
+        "answer": 0,
+        "explanation": "DONTO es la respiración normal."
+      },
+      {
+        "id": "3dan-ibuki",
+        "block": "respiracion",
+        "question": "¿Qué tipo de respiración es IBUKI?",
+        "options": [
+          "Diafragmática con contracción abdominal sonora",
+          "Diafragmática con contracción abdominal sin ruido",
+          "Normal"
+        ],
+        "answer": 0,
+        "explanation": "IBUKI es diafragmática con contracción abdominal sonora."
+      },
+      {
+        "id": "3dan-ibuki-nogare",
+        "block": "respiracion",
+        "question": "¿Qué tipo de respiración es IBUKI NOGARE?",
+        "options": [
+          "Diafragmática con contracción abdominal sonora",
+          "Diafragmática con contracción abdominal sin ruido",
+          "Diafragmática sin contracción abdominal"
+        ],
+        "answer": 1,
+        "explanation": "IBUKI NOGARE es diafragmática con contracción abdominal, pero sin ruido."
+      },
+      {
+        "id": "3dan-nogare",
+        "block": "respiracion",
+        "question": "¿Qué tipo de respiración es NOGARE?",
+        "options": [
+          "Diafragmática con contracción abdominal sin ruido",
+          "Diafragmática sin contracción abdominal",
+          "Profunda, concentrada y sonora"
+        ],
+        "answer": 1,
+        "explanation": "NOGARE es diafragmática sin contracción abdominal. Con contracción pero sin ruido sería IBUKI NOGARE."
+      },
+      {
+        "id": "3dan-ibuki-sankai",
+        "block": "respiracion",
+        "question": "¿Qué tipo de respiración es IBUKI SANKAI?",
+        "options": ["Profunda, concentrada y sonora", "Normal", "Diafragmática sin contracción abdominal"],
+        "answer": 0,
+        "explanation": "IBUKI SANKAI es profunda, concentrada y sonora."
+      },
+      {
+        "id": "3dan-ippon-kumite",
+        "block": "kumite",
+        "question": "¿Qué es IPPON KUMITE?",
+        "options": [
+          "Asalto a un paso y/o una técnica",
+          "Asalto a tres pasos y/o tres técnicas",
+          "Asalto libre a una técnica"
+        ],
+        "answer": 0,
+        "explanation": "IPPON KUMITE es el asalto a un paso y/o una técnica."
+      },
+      {
+        "id": "3dan-sanbon-kumite",
+        "block": "kumite",
+        "question": "¿Qué es SANBON KUMITE?",
+        "options": [
+          "Asalto a un paso y/o una técnica",
+          "Asalto a tres pasos y/o tres técnicas",
+          "Asalto a cinco pasos y/o cinco técnicas"
+        ],
+        "answer": 1,
+        "explanation": "SANBON KUMITE es el asalto a tres pasos y/o tres técnicas."
+      },
+      {
+        "id": "3dan-gohon-kumite",
+        "block": "kumite",
+        "question": "¿Qué es GOHON KUMITE?",
+        "options": [
+          "Asalto a tres pasos y/o tres técnicas",
+          "Asalto a cinco pasos y/o cinco técnicas",
+          "Asalto libre"
+        ],
+        "answer": 1,
+        "explanation": "GOHON KUMITE es el asalto a cinco pasos y/o cinco técnicas."
+      },
+      {
+        "id": "3dan-yakusoku-kumite",
+        "block": "kumite",
+        "question": "¿Qué es YAKUSOKU KUMITE?",
+        "options": [
+          "Asalto de estudio convencional entrelazado",
+          "Asalto libre sin convenciones",
+          "Asalto reglamentado de competición"
+        ],
+        "answer": 0,
+        "explanation": "YAKUSOKU KUMITE es el asalto de estudio convencional entrelazado."
+      },
+      {
+        "id": "3dan-jyu-ippon-kumite",
+        "block": "kumite",
+        "question": "¿Qué es JYU IPPON KUMITE?",
+        "options": [
+          "Asalto a un paso y/o una técnica",
+          "Asalto libre a una técnica",
+          "Asalto de estudio convencional entrelazado"
+        ],
+        "answer": 1,
+        "explanation": "JYU IPPON KUMITE es el asalto libre a una técnica. Sin el JYU, IPPON KUMITE es el asalto a un paso."
+      },
+      {
+        "id": "3dan-jyu-kumite",
+        "block": "kumite",
+        "question": "¿Qué es JYU KUMITE?",
+        "options": ["Asalto libre", "Asalto reglamentado", "Asalto libre a una técnica"],
+        "answer": 0,
+        "explanation": "JYU KUMITE es el asalto libre."
+      },
+      {
+        "id": "3dan-shiai-kumite",
+        "block": "kumite",
+        "question": "¿Qué es SHIAI KUMITE?",
+        "options": ["Asalto libre", "Asalto reglamentado", "Asalto de estudio convencional entrelazado"],
+        "answer": 1,
+        "explanation": "SHIAI KUMITE es el asalto reglamentado, el de competición."
+      }
+    ]
+  }
+}
