@@ -2,25 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark is the default palette. `data-theme` is set before first paint by the
+   inline script in index.html, so there is no flash on load. */
 :root {
   --bg: #0A0A0A;
   --surface: #111111;
   --surface2: #1A1A1A;
   --app-text: #F0EDE8;
   --muted: #A0A099;
-  --border-color: rgba(201, 168, 76, 0.2);
-  --border-hover: rgba(201, 168, 76, 0.5);
+
+  /* El oro se declara en canales para que las utilidades con opacidad
+     (bg-gold/10) sigan funcionando siendo dependiente del tema. */
+  --gold-rgb: 201 168 76;        /* texto acento          7.6:1 mínimo */
+  --gold-dim-rgb: 162 130 58;    /* etiquetas pequeñas    4.8:1 mínimo */
+  --gold-light-rgb: 240 208 128;
+  --gold-fill-rgb: 201 168 76;   /* relleno de marca, siempre con texto oscuro */
+
+  --border-color: rgba(201, 168, 76, 0.2);  /* separadores decorativos */
+  --border-strong: #706A5D;                 /* contorno de controles   3.2:1 */
+  --border-hover: #C9A84C;                  /* estado                  7.6:1 */
+  --focus: #F0D080;
+
+  --ok: #6FCF97;
+  --ok-soft: rgba(111, 207, 151, 0.12);
+  --err: #E8776B;
+  --err-soft: rgba(232, 119, 107, 0.12);
 }
 
+:root[data-theme='light'] {
+  --bg: #F5F2EC;
+  --surface: #FFFFFF;
+  --surface2: #F0EDE8;
+  --app-text: #0A0A0A;
+  --muted: #575754;
+
+  /* El oro de marca sobre blanco solo da 2:1, así que en claro el texto
+     acento usa un oro oscuro. El relleno sí mantiene el oro de marca,
+     porque encima siempre va texto casi negro. */
+  --gold-rgb: 122 95 37;         /* texto acento          5.1:1 mínimo */
+  --gold-dim-rgb: 107 95 69;     /* etiquetas pequeñas    5.4:1 mínimo */
+  --gold-light-rgb: 240 208 128;
+  --gold-fill-rgb: 201 168 76;
+
+  --border-color: rgba(150, 110, 30, 0.25);
+  --border-strong: #8A7852;                 /* contorno de controles   3.7:1 */
+  --border-hover: #6E5622;                  /* estado                  6.0:1 */
+  --focus: #5F4A1D;
+
+  --ok: #286E49;
+  --ok-soft: rgba(40, 110, 73, 0.1);
+  --err: #C0392B;
+  --err-soft: rgba(192, 57, 43, 0.1);
+}
+
+/* No-JS fallback: honour the OS preference when no explicit choice was applied. */
 @media (prefers-color-scheme: light) {
-  :root {
+  :root:not([data-theme]) {
     --bg: #F5F2EC;
     --surface: #FFFFFF;
     --surface2: #F0EDE8;
     --app-text: #0A0A0A;
     --muted: #575754;
-    --border-color: rgba(150, 110, 30, 0.2);
-    --border-hover: rgba(150, 110, 30, 0.4);
+  
+    /* El oro de marca sobre blanco solo da 2:1, así que en claro el texto
+       acento usa un oro oscuro. El relleno sí mantiene el oro de marca,
+       porque encima siempre va texto casi negro. */
+    --gold-rgb: 122 95 37;         /* texto acento          5.1:1 mínimo */
+    --gold-dim-rgb: 107 95 69;     /* etiquetas pequeñas    5.4:1 mínimo */
+    --gold-light-rgb: 240 208 128;
+    --gold-fill-rgb: 201 168 76;
+  
+    --border-color: rgba(150, 110, 30, 0.25);
+    --border-strong: #8A7852;                 /* contorno de controles   3.7:1 */
+    --border-hover: #6E5622;                  /* estado                  6.0:1 */
+    --focus: #5F4A1D;
+  
+    --ok: #286E49;
+    --ok-soft: rgba(40, 110, 73, 0.1);
+    --err: #C0392B;
+    --err-soft: rgba(192, 57, 43, 0.1);
   }
 }
 
@@ -42,6 +102,29 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Un solo indicador de foco para toda la app. Los componentes ya no usan
+   outline-none: el color por sí solo no basta como señal de foco. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* El <main> solo recibe foco desde el enlace de salto: no es un control,
+   así que no lleva anillo. El propio salto ya es la señal. */
+main:focus,
+main:focus-visible {
+  outline: none;
+}
+
+.skip-link {
+  @apply sr-only;
+}
+
+.skip-link:focus {
+  @apply not-sr-only fixed top-3 left-3 z-50 bg-surface text-app-text px-4 py-2 rounded-lg text-sm no-underline;
+  border: 1px solid var(--border-strong);
+}
+
 /* Noise texture — not expressible as a Tailwind utility */
 .noise {
   position: fixed;
@@ -53,8 +136,42 @@ button {
   z-index: 0;
 }
 
-@layer utilities {
-  .border-theme {
-    border-color: var(--border-color);
+/* Quiz motion — compositor-friendly only, and opt-out honoured. */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shake {
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+.animate-rise {
+  animation: rise-in 260ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shake {
+  animation: shake 320ms ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-shake {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
   }
 }
