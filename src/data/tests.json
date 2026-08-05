@@ -6,7 +6,7 @@
     "blocks": [
       { "id": "conceptos", "label": "Conceptos y saludo" },
       { "id": "practica", "label": "Niveles, kata y kumite" },
-      { "id": "estilos", "label": "Estilos y fundadores" }
+      { "id": "estilos", "label": "Estilo, fundador y posiciones" }
     ],
     "questions": [
       {
@@ -160,6 +160,28 @@
         "explanation": "SHI representa a Itosu y TO representa a Higaonna, los dos maestros de Mabuni. RYU significa escuela."
       },
       {
+        "id": "cn-shito-posiciones",
+        "block": "estilos",
+        "style": "shito-ryu",
+        "question": "¿Cuáles son las posiciones características del Shito Ryu?",
+        "options": [
+          "Zenkutsu dachi · Kokutsu dachi · Kiba dachi · Hangetsu dachi · Sochin dachi",
+          "Moto dachi · Nekoashi dachi · Sanchin dachi · Zenkutsu dachi · Shiko dachi",
+          "Heiko dachi · Musubi dachi · Heisoku dachi · Hachiji dachi · Uchi hachiji dachi"
+        ],
+        "answer": 1,
+        "explanation": "Moto dachi, Nekoashi dachi, Sanchin dachi, Zenkutsu dachi y Shiko dachi."
+      },
+      {
+        "id": "cn-shito-posicion-suelta",
+        "block": "estilos",
+        "style": "shito-ryu",
+        "question": "¿Cuál de estas posiciones es característica del Shito Ryu?",
+        "options": ["Kokutsu dachi", "Sanchin dachi", "Kiba dachi"],
+        "answer": 1,
+        "explanation": "Sanchin dachi es una de las cinco posiciones características del Shito Ryu. Kokutsu dachi y Kiba dachi son del Shotokan."
+      },
+      {
         "id": "cn-shotokan-fundador",
         "block": "estilos",
         "style": "shotokan",
@@ -180,6 +202,28 @@
         ],
         "answer": 1,
         "explanation": "SHOTO («pinos oscilantes») era el pseudónimo con el que Funakoshi firmaba sus escritos y KAN significa casa: «la casa de Shoto»."
+      },
+      {
+        "id": "cn-shotokan-posiciones",
+        "block": "estilos",
+        "style": "shotokan",
+        "question": "¿Cuáles son las posiciones características del Shotokan?",
+        "options": [
+          "Moto dachi · Nekoashi dachi · Sanchin dachi · Zenkutsu dachi · Shiko dachi",
+          "Heiko dachi · Musubi dachi · Heisoku dachi · Hachiji dachi · Uchi hachiji dachi",
+          "Zenkutsu dachi · Kokutsu dachi · Kiba dachi · Hangetsu dachi · Sochin dachi"
+        ],
+        "answer": 2,
+        "explanation": "Zenkutsu dachi, Kokutsu dachi, Kiba dachi, Hangetsu dachi y Sochin dachi."
+      },
+      {
+        "id": "cn-shotokan-posicion-suelta",
+        "block": "estilos",
+        "style": "shotokan",
+        "question": "¿Cuál de estas posiciones es característica del Shotokan?",
+        "options": ["Sanchin dachi", "Moto dachi", "Kokutsu dachi"],
+        "answer": 2,
+        "explanation": "Kokutsu dachi es una de las cinco posiciones características del Shotokan. Sanchin dachi y Moto dachi son del Shito Ryu."
       }
     ]
   },
