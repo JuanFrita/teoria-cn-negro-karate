@@ -3,9 +3,15 @@
     "gradeTag": "Test · Cinturón Negro",
     "title": "CN Negro",
     "source": "Normativa RFEK 2026 v1.2.1",
+    "blocks": [
+      { "id": "conceptos", "label": "Conceptos y saludo" },
+      { "id": "practica", "label": "Niveles, kata y kumite" },
+      { "id": "estilos", "label": "Estilos y fundadores" }
+    ],
     "questions": [
       {
         "id": "cn-karate",
+        "block": "conceptos",
         "question": "¿Qué significa KARATE?",
         "options": [
           "Es un nombre, no tiene significado",
@@ -17,6 +23,7 @@
       },
       {
         "id": "cn-zanshin",
+        "block": "conceptos",
         "question": "¿Qué significa ZANSHIN?",
         "options": [
           "El aprovechamiento de la energía física y mental en el momento del impacto",
@@ -28,6 +35,7 @@
       },
       {
         "id": "cn-chakugan",
+        "block": "conceptos",
         "question": "¿Qué significa CHAKUGAN?",
         "options": ["Concentración", "Energía", "Mirada"],
         "answer": 2,
@@ -35,6 +43,7 @@
       },
       {
         "id": "cn-kime",
+        "block": "conceptos",
         "question": "¿Qué es KIME?",
         "options": [
           "El aprovechamiento de la energía física y mental en el momento del impacto",
@@ -46,6 +55,7 @@
       },
       {
         "id": "cn-ki",
+        "block": "conceptos",
         "question": "¿Qué es KI?",
         "options": ["El pensamiento interior", "La energía interior", "Un grito"],
         "answer": 1,
@@ -53,6 +63,7 @@
       },
       {
         "id": "cn-kiai",
+        "block": "conceptos",
         "question": "¿Qué es KIAI?",
         "options": [
           "Un grito que solo se usa para marcar el fin de una línea de un kata",
@@ -64,6 +75,7 @@
       },
       {
         "id": "cn-rei",
+        "block": "conceptos",
         "question": "¿Qué significa REI?",
         "options": ["Saludo", "Posición", "Técnica"],
         "answer": 0,
@@ -71,6 +83,7 @@
       },
       {
         "id": "cn-finalidad-saludo",
+        "block": "conceptos",
         "question": "¿Por qué se saluda y cuál es la finalidad del saludo?",
         "options": [
           "El saludo (REI) se ha mantenido por estética de la cultura japonesa",
@@ -82,6 +95,7 @@
       },
       {
         "id": "cn-jodan",
+        "block": "practica",
         "question": "¿Qué nivel para golpear es JODAN?",
         "options": ["Nivel alto (cabeza)", "Nivel medio (tronco)", "Nivel bajo (de la cintura a los pies)"],
         "answer": 0,
@@ -89,6 +103,7 @@
       },
       {
         "id": "cn-chudan",
+        "block": "practica",
         "question": "¿Qué nivel para golpear es CHUDAN?",
         "options": ["Nivel bajo (de la cintura a los pies)", "Nivel medio (abdomen, costados, espalda, pecho y hombros)", "Nivel alto (cabeza)"],
         "answer": 1,
@@ -96,6 +111,7 @@
       },
       {
         "id": "cn-gedan",
+        "block": "practica",
         "question": "¿Qué nivel para golpear es GEDAN?",
         "options": ["Nivel alto (cabeza)", "Nivel medio (tronco)", "Nivel bajo (desde la cintura a los pies)"],
         "answer": 2,
@@ -103,6 +119,7 @@
       },
       {
         "id": "cn-kata",
+        "block": "practica",
         "question": "Significado de la palabra KATA",
         "options": [
           "KATA es «forma»: una serie de técnicas de defensa y ataque, de puño y pierna, realizadas con un orden preestablecido contra adversarios imaginarios",
@@ -114,6 +131,7 @@
       },
       {
         "id": "cn-kumite",
+        "block": "practica",
         "question": "Significado de la palabra KUMITE",
         "options": ["Demostración", "Puntuación", "Combate"],
         "answer": 2,
@@ -121,6 +139,7 @@
       },
       {
         "id": "cn-shito-fundador",
+        "block": "estilos",
         "question": "¿Quién es el fundador del estilo Shito Ryu?",
         "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Chojun Miyagi"],
         "answer": 1,
@@ -128,6 +147,7 @@
       },
       {
         "id": "cn-shotokan-fundador",
+        "block": "estilos",
         "question": "¿Quién es el fundador del estilo Shotokan?",
         "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Masutatsu Oyama"],
         "answer": 0,
@@ -135,6 +155,7 @@
       },
       {
         "id": "cn-shotokan-significado",
+        "block": "estilos",
         "question": "¿Qué significa SHOTOKAN?",
         "options": [
           "«La escuela de los maestros», por los maestros que la fundaron",
@@ -405,7 +426,7 @@
     "title": "CN Negro 2.º DAN",
     "source": "Normativa RFEK 2026 v1.2.1",
     "blocks": [
-      { "id": "fundamentos", "label": "KARATE DO y criterios de examen" },
+      { "id": "fundamentos", "label": "KARATE DO" },
       { "id": "cadera-tronco", "label": "Cadera y posiciones del tronco" },
       { "id": "mano-brazo", "label": "Partes de la mano y el brazo" },
       { "id": "pie-pierna", "label": "Partes del pie y la pierna" },
@@ -423,30 +444,6 @@
         ],
         "answer": 0,
         "explanation": "KARA significa vacío, TE significa mano y DO camino espiritual."
-      },
-      {
-        "id": "2dan-explicar-posicion",
-        "block": "fundamentos",
-        "question": "Al explicar una posición, ¿qué debe detallar el aspirante?",
-        "options": [
-          "Solo el nombre en japonés y su traducción",
-          "Nombre, superficie de asentamiento, distribución del peso, situación del tronco, características generales y aplicación práctica",
-          "Únicamente los katas en los que aparece"
-        ],
-        "answer": 1,
-        "explanation": "Nombre, superficie de asentamiento, distribución del peso, situación del tronco y demás características generales, así como las posibilidades en su aplicación práctica."
-      },
-      {
-        "id": "2dan-explicar-tecnica",
-        "block": "fundamentos",
-        "question": "Al explicar una técnica, ¿qué debe definir fundamentalmente el aspirante?",
-        "options": [
-          "El número de repeticiones y la respiración empleada",
-          "El kata de origen y su fundador",
-          "Punto de partida, recorrido y terminación, además de su aplicación práctica"
-        ],
-        "answer": 2,
-        "explanation": "Punto de partida, recorrido y terminación, así como las posibilidades en su aplicación práctica."
       },
       {
         "id": "2dan-jyun-kaiten",
@@ -800,47 +797,10 @@
     "title": "CN Negro 3.º DAN",
     "source": "Normativa RFEK 2026 v1.2.1",
     "blocks": [
-      { "id": "estilo-kata", "label": "Estilo y kata" },
       { "id": "respiracion", "label": "Tipos de respiración" },
       { "id": "kumite", "label": "Tipos de kumite" }
     ],
     "questions": [
-      {
-        "id": "3dan-otro-estilo",
-        "block": "estilo-kata",
-        "question": "Además de su propio estilo, ¿qué debe conocer el aspirante a 3.er DAN?",
-        "options": [
-          "Las características técnicas, posiciones fundamentales y fundador de otro estilo a su elección, además del temario general de la Normativa",
-          "Todos los katas de todos los estilos reconocidos",
-          "El reglamento de competición de kumite al completo"
-        ],
-        "answer": 0,
-        "explanation": "Deberá conocer las características técnicas, posiciones fundamentales y fundador de cualquier otro estilo determinado por el aspirante, así como el temario general de la Normativa."
-      },
-      {
-        "id": "3dan-kata-voluntario",
-        "block": "estilo-kata",
-        "question": "Sobre el kata voluntario que presenta, el aspirante debe conocer…",
-        "options": [
-          "Solo su enbusen y su nombre en japonés",
-          "Todos los aspectos históricos, técnicos y de aplicación práctica, a nivel teórico y en profundidad",
-          "Únicamente el bunkai de los tres primeros movimientos"
-        ],
-        "answer": 1,
-        "explanation": "A nivel teórico y en profundidad: todos los aspectos históricos, técnicos y de aplicación práctica del kata voluntario que presenta."
-      },
-      {
-        "id": "3dan-bunkai-2dan",
-        "block": "estilo-kata",
-        "question": "El bunkai de un kata superior que exige el temario, ¿de quién depende su elección?",
-        "options": [
-          "Lo elige el tribunal por sorteo",
-          "Lo asigna la federación autonómica al inscribirse",
-          "Lo determina el propio aspirante, y el tribunal puede pedirle aclaraciones"
-        ],
-        "answer": 2,
-        "explanation": "El kata lo determina el propio aspirante; el tribunal, si lo estima oportuno, podrá pedirle alguna aclaración."
-      },
       {
         "id": "3dan-donto",
         "block": "respiracion",
