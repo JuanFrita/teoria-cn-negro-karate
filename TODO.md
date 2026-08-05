@@ -11,22 +11,26 @@ Cuando añadas preguntas a `src/data/tests.json`, ejecuta `npm run check` antes 
 
 ---
 
-## 1. Estilos distintos de Shito Ryu y Shotokan
+## 1. Posiciones características de Goju Ryu y Wado Ryu
 
-**Dónde:** `src/data/teoria.js` → constante `referenceStyles` (arriba del todo)
+**Dónde:** `src/data/styles.js`
 
-El material adjunto al formulario solo traía Shito Ryu y Shotokan, así que son los dos que están
-metidos. Si en el club se practica otro estilo, basta con añadirlo a esa lista:
+El material adjunto a la Normativa solo traía **Shito Ryu** y **Shotokan**; esos dos están tal cual.
+**Goju Ryu** y **Wado Ryu** los he añadido después para el selector de estilo: fundador y significado
+no admiten discusión, pero sus `stances` **están sin contrastar** contra el material de cada escuela.
+Repásalas antes de darlas por buenas.
 
-```js
-{ name: 'Goju Ryu', founder: '…', meaning: '…', stances: ['…', '…'] }
-```
+Por eso el test solo pregunta **fundador y significado** de cada estilo, no las posiciones.
 
-`referenceStyles` se usa en dos sitios a la vez, así que lo que añadas aparece en los dos:
+`styles.js` es la fuente única y se usa en tres sitios, así que lo que toques sale en los tres:
 
 - **CN Negro pregunta 1** — el estilo que practica el aspirante.
 - **3.er DAN pregunta 1** — el segundo estilo que debe elegir (quien practica uno ya tiene el otro
   estudiado: características técnicas, posiciones fundamentales y fundador).
+- **Selector «Tu estilo»** del test, que filtra las preguntas marcadas con `"style"`.
+
+Para meter un estilo nuevo: añádelo a `styles.js` y crea sus preguntas en `tests.json` con
+`"style": "<id>"`. `npm run check` avisa si un estilo deja algún bloque sin preguntas.
 
 ## 2. Características técnicas del propio estilo — 1.º DAN, pregunta 1
 
@@ -46,15 +50,13 @@ Mismo caso que el anterior, pero con más nivel de detalle: historia, linaje, ka
 
 **Dónde:** `src/data/teoria.js` → `2dan.topics[1]`
 
-Lo elige el propio aspirante, así que no hay respuesta única. En el test sí hay una pregunta sobre
-**quién elige el kata** (`3dan-bunkai-2dan`), que eso sí es objetivo.
+Lo elige el propio aspirante, así que no hay respuesta única.
 
 ## 5. Explicación de una posición y de una técnica — 2.º DAN, preguntas 4 y 5
 
 **Dónde:** `src/data/teoria.js` → `2dan.topics[3]` y `2dan.topics[4]`
 
-En el test están cubiertos los **criterios** que hay que citar (`2dan-explicar-posicion`,
-`2dan-explicar-tecnica`), pero no el contenido concreto de cada posición o técnica.
+El test no cubre el contenido concreto de cada posición o técnica.
 
 Si quieres que esto sea estudiable de verdad, lo suyo sería una ficha por posición
 (zenkutsu dachi, kokutsu dachi, kiba dachi, shiko dachi, nekoashi dachi…) con: superficie de

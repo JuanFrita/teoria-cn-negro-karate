@@ -140,14 +140,29 @@
       {
         "id": "cn-shito-fundador",
         "block": "estilos",
+        "style": "shito-ryu",
         "question": "¿Quién es el fundador del estilo Shito Ryu?",
         "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Chojun Miyagi"],
         "answer": 1,
-        "explanation": "Kenwa Mabuni fundó el Shito Ryu. SHI viene de Itosu y TO de Higaonna, sus dos maestros; RYU significa escuela."
+        "explanation": "Kenwa Mabuni fundó el Shito Ryu."
+      },
+      {
+        "id": "cn-shito-significado",
+        "block": "estilos",
+        "style": "shito-ryu",
+        "question": "¿Qué significa SHITO RYU?",
+        "options": [
+          "SHI viene de Itosu y TO de Higaonna, los dos maestros de Mabuni; RYU es escuela",
+          "SHI es «cuatro» y TO es «camino»; RYU es escuela",
+          "SHI es «mano» y TO es «vacío»; RYU es escuela"
+        ],
+        "answer": 0,
+        "explanation": "SHI representa a Itosu y TO representa a Higaonna, los dos maestros de Mabuni. RYU significa escuela."
       },
       {
         "id": "cn-shotokan-fundador",
         "block": "estilos",
+        "style": "shotokan",
         "question": "¿Quién es el fundador del estilo Shotokan?",
         "options": ["Gichin Funakoshi", "Kenwa Mabuni", "Masutatsu Oyama"],
         "answer": 0,
@@ -156,6 +171,7 @@
       {
         "id": "cn-shotokan-significado",
         "block": "estilos",
+        "style": "shotokan",
         "question": "¿Qué significa SHOTOKAN?",
         "options": [
           "«La escuela de los maestros», por los maestros que la fundaron",
@@ -164,6 +180,50 @@
         ],
         "answer": 1,
         "explanation": "SHOTO («pinos oscilantes») era el pseudónimo con el que Funakoshi firmaba sus escritos y KAN significa casa: «la casa de Shoto»."
+      },
+      {
+        "id": "cn-goju-fundador",
+        "block": "estilos",
+        "style": "goju-ryu",
+        "question": "¿Quién es el fundador del estilo Goju Ryu?",
+        "options": ["Chojun Miyagi", "Kanryo Higaonna", "Hironori Otsuka"],
+        "answer": 0,
+        "explanation": "Chojun Miyagi fundó el Goju Ryu. Higaonna fue su maestro, pero no el fundador del estilo."
+      },
+      {
+        "id": "cn-goju-significado",
+        "block": "estilos",
+        "style": "goju-ryu",
+        "question": "¿Qué significa GOJU RYU?",
+        "options": [
+          "«La escuela del puño de Okinawa»: GO es puño y JU es Okinawa",
+          "«La escuela de los cinco caminos»: GO es cinco y JU es camino",
+          "«La escuela de lo duro y lo blando»: GO es duro y JU es blando"
+        ],
+        "answer": 2,
+        "explanation": "GO significa duro y JU significa blando; RYU es escuela. Miyagi tomó el nombre de un precepto del Bubishi."
+      },
+      {
+        "id": "cn-wado-fundador",
+        "block": "estilos",
+        "style": "wado-ryu",
+        "question": "¿Quién es el fundador del estilo Wado Ryu?",
+        "options": ["Gichin Funakoshi", "Hironori Otsuka", "Chojun Miyagi"],
+        "answer": 1,
+        "explanation": "Hironori Otsuka fundó el Wado Ryu. Fue alumno de Funakoshi, pero no es el fundador del estilo."
+      },
+      {
+        "id": "cn-wado-significado",
+        "block": "estilos",
+        "style": "wado-ryu",
+        "question": "¿Qué significa WADO RYU?",
+        "options": [
+          "«La escuela del camino de la armonía»: WA es armonía y DO es camino",
+          "«La escuela del camino del vacío»: WA es vacío y DO es camino",
+          "«La escuela del camino del guerrero»: WA es guerrero y DO es camino"
+        ],
+        "answer": 0,
+        "explanation": "WA significa armonía y DO significa camino; RYU es escuela."
       }
     ]
   },

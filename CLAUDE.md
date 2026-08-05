@@ -26,7 +26,7 @@ Two parallel data-driven sections, each with one config file as its single sourc
 A `teoriaData` object keyed by grade slug (`cn`, `1dan`, `2dan`, `3dan`), each `{ gradeTag, title, meta, note, topics[] }`. A topic renders in one of four mutually exclusive modes, dispatched by `src/views/TeoriaPage.vue`:
 
 - `develop: true` → `DevelopBadge` ("desarrollar por el aspirante") plus `answer`
-- `styles: [{ name, founder, meaning, stances[] }]` → `answer` plus `StyleList` cards. Both CN Negro topic 1 (own style) and 3.er DAN topic 1 (the second style the candidate must pick) point at the same `referenceStyles` constant, so adding a style shows up in both.
+- `styles: [{ id, name, founder, meaning, stances[] }]` → `answer` plus `StyleList` cards. Both CN Negro topic 1 (own style) and 3.er DAN topic 1 (the second style the candidate must pick) import the same list from `src/data/styles.js`, so adding a style shows up in both — and in the quiz's style filter.
 - `terms: [{ jp, es }]` → `TermList` two-column glossary, with optional `matices` inline below
 - otherwise → plain `answer` text
 
@@ -38,12 +38,13 @@ Pure JSON so questions can be edited without touching code. Keyed by the same gr
 
 ```jsonc
 { "1dan": { "gradeTag": "…", "title": "…", "source": "…",
-  "blocks": [                       // optional; omit for short tests
+  "blocks": [                       // every grade declares them; keep it that way
     { "id": "saludos", "label": "Saludos y MOKUSO" }
   ],
   "questions": [{
     "id": "1dan-za-rei",            // unique across the whole file
     "block": "saludos",             // required once the grade declares blocks
+    "style": "shito-ryu",           // optional; without it the question is common to every style
     "question": "¿Qué es ZA REI?",
     "options": ["…", "…", "…"],     // 2+, no duplicates
     "answer": 1,                    // 0-based index into options
@@ -54,6 +55,19 @@ Pure JSON so questions can be edited without touching code. Keyed by the same gr
 Question style: **one term per question**. Paired questions ("X and Y are, respectively…") were removed — when the distractor is the inverted pair, knowing one of the two terms is enough to answer, so they look like they test two terms but test one.
 
 Grades with `blocks` show a selector on the intro screen, always led by a synthetic "Todo el temario" option whose id is `all` — that id is reserved and `npm run check` rejects it as a real block id.
+
+### Style-dependent questions
+
+The syllabus asks about *your own* style, so a question may carry `style` (an id from `src/data/styles.js`) and is then only dealt to candidates who practise it; a question without `style` is common to everyone. The picker only appears on grades that actually have styled questions, and defaults to a synthetic "Todos" (`all`, reserved like the block id) that deals every variant.
+
+The choice is a property of the person, not of the run, so it persists in `localStorage` under `karate-style` and carries across grades and visits. It is re-validated on read: an id that no longer exists falls back to "Todos" instead of silently emptying the deck.
+
+Two invariants keep an empty deck impossible, and `npm run check` enforces the first:
+
+1. No style may leave the grade — or any of its blocks — without questions.
+2. `QuizIntro` disables both mode buttons when the current block/style combination yields zero.
+
+Best scores append the style to the scope key **only on grades that have styled questions**, since the key must identify the deck; the other grades keep their existing `grade:block` records.
 
 The runtime splits into pure logic and state:
 

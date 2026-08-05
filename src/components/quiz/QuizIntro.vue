@@ -12,6 +12,28 @@
       </div>
     </div>
 
+    <template v-if="styles.length > 1">
+      <p class="text-[0.75rem] tracking-[0.16em] uppercase text-muted mb-3">Tu estilo</p>
+
+      <div class="flex flex-wrap gap-2 mb-2" role="group" aria-label="Estilo que practicas">
+        <button
+          v-for="style in styles"
+          :key="style.id"
+          type="button"
+          :aria-pressed="style.id === selectedStyle"
+          class="block-chip"
+          :class="{ 'is-active': style.id === selectedStyle }"
+          @click="$emit('select-style', style.id)"
+        >
+          {{ style.name }}
+        </button>
+      </div>
+
+      <p class="text-[0.8rem] text-muted mb-8">
+        Las preguntas sobre el estilo (fundador y significado) se ajustan al que practicas.
+      </p>
+    </template>
+
     <template v-if="blocks.length > 1">
       <p class="text-[0.75rem] tracking-[0.16em] uppercase text-muted mb-3">Elige el temario</p>
 
@@ -33,8 +55,17 @@
 
     <p class="text-[0.75rem] tracking-[0.16em] uppercase text-muted mb-3">Elige cómo practicar</p>
 
+    <p v-if="questionCount === 0" class="text-[0.875rem] text-muted mb-3" role="status">
+      Esta combinación se queda sin preguntas. Prueba con otro bloque.
+    </p>
+
     <div class="flex flex-col gap-3">
-      <button type="button" class="mode-card group" @click="$emit('start', QUIZ_MODES.STUDY)">
+      <button
+        type="button"
+        class="mode-card group"
+        :disabled="questionCount === 0"
+        @click="$emit('start', QUIZ_MODES.STUDY)"
+      >
         <div class="flex items-center justify-between gap-3">
           <span class="font-bebas text-2xl tracking-[0.08em] leading-none">Modo Estudio</span>
           <span class="mode-arrow text-gold-dim text-xl">→</span>
@@ -44,7 +75,12 @@
         </p>
       </button>
 
-      <button type="button" class="mode-card group" @click="$emit('start', QUIZ_MODES.EXAM)">
+      <button
+        type="button"
+        class="mode-card group"
+        :disabled="questionCount === 0"
+        @click="$emit('start', QUIZ_MODES.EXAM)"
+      >
         <div class="flex items-center justify-between gap-3">
           <span class="font-bebas text-2xl tracking-[0.08em] leading-none">Modo Examen</span>
           <span class="mode-arrow text-gold-dim text-xl">→</span>
@@ -73,9 +109,12 @@ defineProps({
   bestScore: { type: Object, default: null },
   blocks: { type: Array, default: () => [] },
   selected: { type: String, default: 'all' },
+  styles: { type: Array, default: () => [] },
+  selectedStyle: { type: String, default: 'all' },
+  questionCount: { type: Number, default: 0 },
 })
 
-defineEmits(['start', 'select-block'])
+defineEmits(['start', 'select-block', 'select-style'])
 </script>
 
 <style scoped>
@@ -85,11 +124,15 @@ defineEmits(['start', 'select-block'])
   backface-visibility: hidden;
 }
 
-.mode-card:hover,
+.mode-card:not(:disabled):hover,
 .mode-card:focus-visible {
   @apply bg-surface2;
   border-color: var(--border-hover);
   transform: translate3d(0, -3px, 0);
+}
+
+.mode-card:disabled {
+  @apply opacity-40 cursor-not-allowed;
 }
 
 .block-chip {

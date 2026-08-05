@@ -7,6 +7,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { computeResult, prepareDeck } from '../src/lib/quiz.js'
+import { ALL_STYLES, styleIds } from '../src/data/styles.js'
 
 const testsPath = fileURLToPath(new URL('../src/data/tests.json', import.meta.url))
 const tests = JSON.parse(readFileSync(testsPath, 'utf8'))
@@ -62,6 +63,32 @@ for (const [grade, config] of Object.entries(tests)) {
     }
   }
 
+  // Las preguntas con "style" solo se ven si el aspirante practica ese estilo.
+  const styled = config.questions.filter(question => question.style)
+  for (const question of styled) {
+    if (question.style === ALL_STYLES) {
+      problems.push(`${grade}/${question.id}: "${ALL_STYLES}" está reservado para «Todos»`)
+    } else if (!styleIds.includes(question.style)) {
+      problems.push(`${grade}/${question.id}: estilo desconocido "${question.style}"`)
+    }
+  }
+
+  // Elegir un estilo no puede dejar sin preguntas ni al test ni a ninguno de sus
+  // bloques: el mazo se quedaría vacío y no habría nada que responder.
+  if (styled.length > 0) {
+    for (const styleId of styleIds) {
+      const visible = config.questions.filter(q => !q.style || q.style === styleId)
+      if (visible.length === 0) {
+        problems.push(`${grade}: sin preguntas para el estilo "${styleId}"`)
+      }
+      for (const block of config.blocks ?? []) {
+        if (visible.filter(q => q.block === block.id).length === 0) {
+          problems.push(`${grade}: el bloque "${block.id}" se queda vacío para el estilo "${styleId}"`)
+        }
+      }
+    }
+  }
+
   // Options are shuffled on every run, so the correct answer must survive it.
   for (let run = 0; run < 200; run += 1) {
     for (const card of prepareDeck(config.questions, { shuffleQuestions: true, shuffleOptions: true })) {
@@ -79,7 +106,11 @@ for (const [grade, config] of Object.entries(tests)) {
     problems.push(`${grade}: las preguntas sin responder cuentan como acierto`)
   }
 
-  console.log(`${grade.padEnd(6)} ${String(config.questions.length).padStart(3)} preguntas${blockIds.size ? ` · ${blockIds.size} bloques` : ""} · OK`)
+  console.log(
+    `${grade.padEnd(6)} ${String(config.questions.length).padStart(3)} preguntas` +
+      `${blockIds.size ? ` · ${blockIds.size} bloques` : ''}` +
+      `${styled.length ? ` · ${styled.length} por estilo` : ''} · OK`,
+  )
 }
 
 if (problems.length > 0) {

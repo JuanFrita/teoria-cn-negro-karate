@@ -29,12 +29,16 @@ en vez de la respuesta.
 Además: bloques temáticos para estudiar por partes, repesca de solo los fallos, mejor marca guardada
 por grado y por bloque, tema claro/oscuro y atajos de teclado.
 
+**Preguntas según tu estilo.** El temario pregunta por el estilo *que tú practicas*, así que en el
+CN Negro eliges el tuyo (Shito Ryu, Shotokan, Goju Ryu o Wado Ryu) y las preguntas de fundador y
+significado se ajustan solas. La elección se recuerda entre visitas.
+
 | Grado | Preguntas | Bloques |
 |---|---|---|
-| CN Negro | 16 | — |
+| CN Negro | 15 (+ variantes por estilo) | 3 |
 | 1.º DAN | 27 | 3 |
-| 2.º DAN | 44 | 5 |
-| 3.er DAN | 15 | 3 |
+| 2.º DAN | 42 | 5 |
+| 3.er DAN | 12 | 2 |
 
 ## Desarrollo
 
@@ -50,12 +54,18 @@ npm run check    # valida los tests — pásalo antes de subir nada
 
 `npm run check` es el importante. Todo el cuestionario se genera desde un archivo de datos, así que un
 índice de respuesta mal puesto daría por fallada la opción correcta sin avisar. El script comprueba
-ids duplicados, opciones repetidas, índices fuera de rango, bloques huérfanos y que el barajado nunca
-pierda la respuesta buena.
+ids duplicados, opciones repetidas, índices fuera de rango, bloques huérfanos, estilos desconocidos,
+que ningún estilo deje un bloque sin preguntas y que el barajado nunca pierda la respuesta buena.
 
 ## Cómo añadir o corregir contenido
 
-Todo el contenido vive en dos archivos. No hace falta tocar componentes.
+Todo el contenido vive en tres archivos. No hace falta tocar componentes.
+
+### Estilos — `src/data/styles.js`
+
+La lista de estilos, con `id`, nombre, fundador, significado y posiciones características. Es fuente
+única: de aquí salen las fichas de la teoría **y** el selector «Tu estilo» del test. Para añadir uno,
+mételo en la lista y crea sus preguntas en `tests.json` con `"style": "<id>"`.
 
 ### Teoría — `src/data/teoria.js`
 
@@ -82,6 +92,7 @@ Un objeto por grado (`cn`, `1dan`, `2dan`, `3dan`). Cada tema se pinta según lo
     "questions": [{
       "id": "1dan-za-rei",         // único en todo el archivo
       "block": "saludos",          // obligatorio si el grado declara bloques
+      "style": "shito-ryu",        // opcional: sin él, la pregunta es común a todos los estilos
       "question": "¿Qué es ZA REI?",
       "options": ["Saludo al maestro", "Saludo de ceremonia", "Saludo al frente"],
       "answer": 1,                 // índice, empezando en 0
@@ -96,6 +107,8 @@ Dos reglas al escribir preguntas:
 1. **Un término por pregunta.** Nada de «X e Y son, respectivamente…»: si el distractor es el par
    invertido, sabiendo uno de los dos ya se acierta.
 2. **Cuidado con la longitud.** Si la opción correcta es siempre la más larga, se acierta sin leer.
+3. **Nada de preguntar por el examen.** «¿Qué debe detallar el aspirante al explicar una posición?»
+   evalúa el procedimiento, no el karate. Pregunta por el contenido.
 
 Al terminar, `npm run check`.
 

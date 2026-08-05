@@ -1,22 +1,7 @@
-// Los dos estilos del material adjunto a la Normativa. CN Negro los usa para el
-// estilo propio del aspirante; 3.er DAN, para el segundo estilo que debe elegir
-// (quien practica uno tiene el otro ya estudiado).
-const referenceStyles = [
-  {
-    name: 'Shito Ryu',
-    founder: 'Kenwa Mabuni',
-    meaning:
-      'SHI representa a Itosu y TO representa a Higaonna, los dos maestros de Mabuni. RYU significa escuela.',
-    stances: ['Moto dachi', 'Nekoashi dachi', 'Sanchin dachi', 'Zenkutsu dachi', 'Shiko dachi'],
-  },
-  {
-    name: 'Shotokan',
-    founder: 'Gichin Funakoshi',
-    meaning:
-      '«La casa de Shoto». SHOTO era el pseudónimo con el que el maestro Funakoshi firmaba sus escritos y significa «pinos oscilantes»; KAN significa casa.',
-    stances: ['Zenkutsu dachi', 'Kokutsu dachi', 'Kiba dachi', 'Hangetsu dachi', 'Sochin dachi'],
-  },
-]
+// Las fichas de estilo salen de src/data/styles.js, que es también lo que filtra
+// las preguntas del test. CN Negro las usa para el estilo propio del aspirante;
+// 3.er DAN, para el segundo estilo que debe elegir.
+import { styles as referenceStyles } from './styles.js'
 
 export const teoriaData = {
   cn: {

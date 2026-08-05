@@ -14,7 +14,11 @@
       :best-score="quiz.bestScore.value"
       :blocks="blockOptions"
       :selected="selectedBlock"
+      :styles="styleOptions"
+      :selected-style="selectedStyle"
+      :question-count="questions.length"
       @select-block="selectedBlock = $event"
+      @select-style="selectStyle"
       @start="quiz.start"
     />
 
@@ -83,7 +87,9 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import testsData from '../data/tests.json'
+import { ALL_STYLES, styles as allStyles } from '../data/styles.js'
 import { QUIZ_PHASES, useQuiz } from '../composables/useQuiz.js'
+import { readJson, writeJson } from '../lib/storage.js'
 import TheoryPage from '../components/TheoryPage.vue'
 import QuizIntro from '../components/quiz/QuizIntro.vue'
 import QuizProgress from '../components/quiz/QuizProgress.vue'
@@ -91,6 +97,7 @@ import QuizQuestion from '../components/quiz/QuizQuestion.vue'
 import QuizResult from '../components/quiz/QuizResult.vue'
 
 const ALL_BLOCKS = 'all'
+const STYLE_KEY = 'karate-style'
 
 const route = useRoute()
 const gradeKey = computed(() => String(route.params.grade))
@@ -98,28 +105,59 @@ const test = computed(() => testsData[gradeKey.value] ?? null)
 
 const selectedBlock = ref(ALL_BLOCKS)
 
-const questions = computed(() => {
-  const all = test.value?.questions ?? []
-  return selectedBlock.value === ALL_BLOCKS ? all : all.filter(q => q.block === selectedBlock.value)
-})
+// El estilo es un dato del aspirante, no de la partida: se recuerda entre grados
+// y entre visitas. Se valida al leerlo por si el id guardado ya no existe.
+const storedStyle = readJson(STYLE_KEY, ALL_STYLES)
+const selectedStyle = ref(
+  allStyles.some(style => style.id === storedStyle) ? storedStyle : ALL_STYLES,
+)
+
+function selectStyle(id) {
+  selectedStyle.value = id
+  writeJson(STYLE_KEY, id)
+}
+
+// Una pregunta sin "style" es común a todos los estilos.
+const matchesStyle = question =>
+  !question.style || selectedStyle.value === ALL_STYLES || question.style === selectedStyle.value
+
+const gradeQuestions = computed(() => (test.value?.questions ?? []).filter(matchesStyle))
+
+const questions = computed(() =>
+  selectedBlock.value === ALL_BLOCKS
+    ? gradeQuestions.value
+    : gradeQuestions.value.filter(q => q.block === selectedBlock.value),
+)
 
 const blockOptions = computed(() => {
-  const all = test.value?.questions ?? []
   const declared = test.value?.blocks ?? []
   if (declared.length === 0) return []
 
   return [
-    { id: ALL_BLOCKS, label: 'Todo el temario', count: all.length },
+    { id: ALL_BLOCKS, label: 'Todo el temario', count: gradeQuestions.value.length },
     ...declared.map(block => ({
       ...block,
-      count: all.filter(q => q.block === block.id).length,
+      count: gradeQuestions.value.filter(q => q.block === block.id).length,
     })),
   ]
 })
 
+// El selector de estilo solo aparece donde cambia algo.
+const hasStyleQuestions = computed(() => (test.value?.questions ?? []).some(q => q.style))
+
+const styleOptions = computed(() => {
+  if (!hasStyleQuestions.value) return []
+  return [{ id: ALL_STYLES, name: 'Todos' }, ...allStyles.map(({ id, name }) => ({ id, name }))]
+})
+
 // Each block keeps its own best score: a 7-question block and the full test are
-// not comparable, so they must not overwrite each other.
-const scopeKey = computed(() => `${gradeKey.value}:${selectedBlock.value}`)
+// not comparable, so they must not overwrite each other. The style only joins the
+// key where it actually changes the deck, so the other grades keep their records.
+const scopeKey = computed(() =>
+  hasStyleQuestions.value
+    ? `${gradeKey.value}:${selectedBlock.value}:${selectedStyle.value}`
+    : `${gradeKey.value}:${selectedBlock.value}`,
+)
 
 const quiz = useQuiz(scopeKey, questions)
 
