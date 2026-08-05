@@ -30,7 +30,7 @@
       </div>
 
       <p class="text-[0.8rem] text-muted mb-8">
-        Las preguntas sobre el estilo (fundador y significado) se ajustan al que practicas.
+        Las preguntas sobre el estilo (fundador y significado) son las del que practicas.
       </p>
     </template>
 

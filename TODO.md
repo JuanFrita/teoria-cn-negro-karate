@@ -11,16 +11,19 @@ Cuando añadas preguntas a `src/data/tests.json`, ejecuta `npm run check` antes 
 
 ---
 
-## 1. Posiciones características de Goju Ryu y Wado Ryu
+## 1. Estilos distintos de Shito Ryu y Shotokan
 
 **Dónde:** `src/data/styles.js`
 
-El material adjunto a la Normativa solo traía **Shito Ryu** y **Shotokan**; esos dos están tal cual.
-**Goju Ryu** y **Wado Ryu** los he añadido después para el selector de estilo: fundador y significado
-no admiten discusión, pero sus `stances` **están sin contrastar** contra el material de cada escuela.
-Repásalas antes de darlas por buenas.
+El material adjunto a la Normativa solo traía **Shito Ryu** y **Shotokan**, así que son los dos que
+hay. Si en el club se practica otro (Goju Ryu, Wado Ryu…), se añade aquí:
 
-Por eso el test solo pregunta **fundador y significado** de cada estilo, no las posiciones.
+```js
+{ id: 'goju-ryu', name: 'Goju Ryu', founder: '…', meaning: '…', stances: ['…', '…'] }
+```
+
+Ojo con las `stances`: contrástalas contra el material de la escuela antes de darlas por buenas. Por
+eso el test solo pregunta **fundador y significado**, que no admiten discusión, y no las posiciones.
 
 `styles.js` es la fuente única y se usa en tres sitios, así que lo que toques sale en los tres:
 

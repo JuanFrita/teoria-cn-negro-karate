@@ -58,9 +58,9 @@ Grades with `blocks` show a selector on the intro screen, always led by a synthe
 
 ### Style-dependent questions
 
-The syllabus asks about *your own* style, so a question may carry `style` (an id from `src/data/styles.js`) and is then only dealt to candidates who practise it; a question without `style` is common to everyone. The picker only appears on grades that actually have styled questions, and defaults to a synthetic "Todos" (`all`, reserved like the block id) that deals every variant.
+The syllabus asks about *your own* style, so a question may carry `style` (an id from `src/data/styles.js`) and is then only dealt to candidates who practise it; a question without `style` is common to everyone. The picker only appears on grades that actually have styled questions. There is deliberately **no "all" option** — a style is always selected, defaulting to `DEFAULT_STYLE` (the first entry).
 
-The choice is a property of the person, not of the run, so it persists in `localStorage` under `karate-style` and carries across grades and visits. It is re-validated on read: an id that no longer exists falls back to "Todos" instead of silently emptying the deck.
+The choice is a property of the person, not of the run, so it persists in `localStorage` under `karate-style` and carries across grades and visits. It is re-validated on read: an id that no longer exists falls back to the default instead of silently emptying the deck.
 
 Two invariants keep an empty deck impossible, and `npm run check` enforces the first:
 

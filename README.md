@@ -30,8 +30,8 @@ Además: bloques temáticos para estudiar por partes, repesca de solo los fallos
 por grado y por bloque, tema claro/oscuro y atajos de teclado.
 
 **Preguntas según tu estilo.** El temario pregunta por el estilo *que tú practicas*, así que en el
-CN Negro eliges el tuyo (Shito Ryu, Shotokan, Goju Ryu o Wado Ryu) y las preguntas de fundador y
-significado se ajustan solas. La elección se recuerda entre visitas.
+CN Negro eliges el tuyo (de momento Shito Ryu o Shotokan) y las preguntas de fundador y significado
+se ajustan solas. La elección se recuerda entre visitas.
 
 | Grado | Preguntas | Bloques |
 |---|---|---|

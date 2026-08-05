@@ -87,7 +87,7 @@
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import testsData from '../data/tests.json'
-import { ALL_STYLES, styles as allStyles } from '../data/styles.js'
+import { DEFAULT_STYLE, styles as allStyles } from '../data/styles.js'
 import { QUIZ_PHASES, useQuiz } from '../composables/useQuiz.js'
 import { readJson, writeJson } from '../lib/storage.js'
 import TheoryPage from '../components/TheoryPage.vue'
@@ -107,9 +107,9 @@ const selectedBlock = ref(ALL_BLOCKS)
 
 // El estilo es un dato del aspirante, no de la partida: se recuerda entre grados
 // y entre visitas. Se valida al leerlo por si el id guardado ya no existe.
-const storedStyle = readJson(STYLE_KEY, ALL_STYLES)
+const storedStyle = readJson(STYLE_KEY, DEFAULT_STYLE)
 const selectedStyle = ref(
-  allStyles.some(style => style.id === storedStyle) ? storedStyle : ALL_STYLES,
+  allStyles.some(style => style.id === storedStyle) ? storedStyle : DEFAULT_STYLE,
 )
 
 function selectStyle(id) {
@@ -118,8 +118,7 @@ function selectStyle(id) {
 }
 
 // Una pregunta sin "style" es común a todos los estilos.
-const matchesStyle = question =>
-  !question.style || selectedStyle.value === ALL_STYLES || question.style === selectedStyle.value
+const matchesStyle = question => !question.style || question.style === selectedStyle.value
 
 const gradeQuestions = computed(() => (test.value?.questions ?? []).filter(matchesStyle))
 
@@ -145,10 +144,9 @@ const blockOptions = computed(() => {
 // El selector de estilo solo aparece donde cambia algo.
 const hasStyleQuestions = computed(() => (test.value?.questions ?? []).some(q => q.style))
 
-const styleOptions = computed(() => {
-  if (!hasStyleQuestions.value) return []
-  return [{ id: ALL_STYLES, name: 'Todos' }, ...allStyles.map(({ id, name }) => ({ id, name }))]
-})
+const styleOptions = computed(() =>
+  hasStyleQuestions.value ? allStyles.map(({ id, name }) => ({ id, name })) : [],
+)
 
 // Each block keeps its own best score: a 7-question block and the full test are
 // not comparable, so they must not overwrite each other. The style only joins the

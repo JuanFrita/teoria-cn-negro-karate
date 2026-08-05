@@ -7,7 +7,7 @@
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { computeResult, prepareDeck } from '../src/lib/quiz.js'
-import { ALL_STYLES, styleIds } from '../src/data/styles.js'
+import { styleIds } from '../src/data/styles.js'
 
 const testsPath = fileURLToPath(new URL('../src/data/tests.json', import.meta.url))
 const tests = JSON.parse(readFileSync(testsPath, 'utf8'))
@@ -66,9 +66,7 @@ for (const [grade, config] of Object.entries(tests)) {
   // Las preguntas con "style" solo se ven si el aspirante practica ese estilo.
   const styled = config.questions.filter(question => question.style)
   for (const question of styled) {
-    if (question.style === ALL_STYLES) {
-      problems.push(`${grade}/${question.id}: "${ALL_STYLES}" está reservado para «Todos»`)
-    } else if (!styleIds.includes(question.style)) {
+    if (!styleIds.includes(question.style)) {
       problems.push(`${grade}/${question.id}: estilo desconocido "${question.style}"`)
     }
   }
